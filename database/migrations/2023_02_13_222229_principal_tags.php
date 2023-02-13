@@ -14,6 +14,11 @@ return new class extends Migration
     public function up()
     {
         //
+        Schema::create('principal_tags', function (Blueprint $table) {
+            $table->id();
+            $table->string('tag_name');
+            $table->timestamps();
+        });
     }
 
     /**
