@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Meson Jesus | Restaurante</title>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,7 +21,9 @@
             }
         </style>
     </head>
-    <body class="antialiased">
-        This is the menu
+    <body class="relative antialiased bg-black">
+        <x-header></x-header>
+        <x-navigation></x-navigation>
+        <x-tab-bar></x-tab-bar>
     </body>
 </html>
