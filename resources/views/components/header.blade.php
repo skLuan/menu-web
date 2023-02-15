@@ -1,3 +1,4 @@
-<header class="bg-black border-bottom border-red-navigation">
-header
+<header class="bg-black border-bottom border-red-navigation px-5 py-3 flex flex-row">
+<img class="" src="{{Vite::asset('resources/img/icons/logo.svg')}}" alt="">
+<div class="my-auto pl-5"><p class="text-gray text-sm font-light">Precios en <span class="font-bold">EUR</span></p></div>
 </header>

@@ -33,6 +33,9 @@ module.exports = {
                     DEFAULT: "#DCB655",
                 },
             },
+            fontFamily: {
+                montserrat: ['Montserrat']
+            }
         },
     },
 

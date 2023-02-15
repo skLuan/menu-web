@@ -4,16 +4,18 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class category-side-bar extends Component
+class categorySideBar extends Component
 {
+    public $categories;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($categories)
     {
         //
+        $this->categories = $categories;
     }
 
     /**

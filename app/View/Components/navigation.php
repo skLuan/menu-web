@@ -3,9 +3,11 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Models\Category;
 
 class navigation extends Component
 {
+    public $categories;
     /**
      * Create a new component instance.
      *
@@ -14,6 +16,7 @@ class navigation extends Component
     public function __construct()
     {
         //
+        $this->categories = Category::get();
     }
 
     /**
