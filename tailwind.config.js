@@ -24,7 +24,6 @@ module.exports = {
                 },
                 red: {
                     navigation: "#A5281D",
-                    navigation: "#A5281D",
                 },
                 gray: {
                     DEFAULT: "#A09693",

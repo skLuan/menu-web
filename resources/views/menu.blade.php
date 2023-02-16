@@ -15,7 +15,7 @@
 <body class="relative antialiased bg-black">
     <x-header></x-header>
     <x-navigation></x-navigation>
-
+    <p class="text-white">holi soy un ganzo</p>
     <x-tab-bar></x-tab-bar>
 </body>
 

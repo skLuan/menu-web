@@ -1,5 +1,5 @@
 
-<section class="h-full">
+<section class="realtive h-full">
           <x-breadcrumb :categories="$categories"></x-breadcrumb>
         <x-category-side-bar :$categories></x-category-side-bar>
 </section>
