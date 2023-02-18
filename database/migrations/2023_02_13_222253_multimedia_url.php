@@ -14,11 +14,13 @@ return new class extends Migration
     public function up()
     {
         //
-        Schema::create('multimedia_url', function (Blueprint $table) {
+        Schema::create('multimedia_urls', function (Blueprint $table) {
             $table->id();
             $table->string('url');
-            $table->foreignId('dish_id')->constrained('dishes');
-            $table->foreignId('category_id')->constrained('categories');
+            $table->integer('type'); // 0 is Icon, 1 is image
+            // $table->foreignId('icon_multimedia_id')->nullable();
+            // $table->foreignId('dish_id')->constrained('dishes');
+            // $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
@@ -17,10 +18,12 @@ class categories extends Seeder
     {
         $cat = ['Bebidas','Tapas','Carnes', 'Pescados', 'Pastas', 'Paellas', 'Postres'];
 
-        foreach ($cat as $c) {
-            DB::table('categories')->insert([
-                'cat_name' => $c,
-            ]);
+        foreach ($cat as $i => $c) {
+            $cat = new Category();
+            $cat->cat_name = $c;
+            // $cat->icon()->associate($i);
+            $cat->save();
+
         }
     }
 }
