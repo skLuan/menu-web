@@ -27,6 +27,11 @@
                         <picture><img src="" alt=""></picture>
                     </div>
                 </div>
+                <article class="text-white">
+                    <pre>
+                        {{ $cat->dishes()->get()}}
+                    </pre>
+                </article>
             @endforeach
         </div>
     </div>

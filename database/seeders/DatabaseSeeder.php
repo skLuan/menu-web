@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             categories::class,
             principal_tags::class,
+            multimedia_seeder::class,
+            dishes_seeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

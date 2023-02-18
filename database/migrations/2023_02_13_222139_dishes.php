@@ -18,6 +18,8 @@ return new class extends Migration
             $table->id();
             $table->string('dish_name');
             $table->text('description');
+            $table->float('price');
+            $table->foreignId('category_id');
             $table->timestamps();
         });
     }

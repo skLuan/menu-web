@@ -14,6 +14,13 @@ return new class extends Migration
     public function up()
     {
         //
+        Schema::create('multimedia_url', function (Blueprint $table) {
+            $table->id();
+            $table->string('url');
+            $table->foreignId('dish_id')->constrained('dishes');
+            $table->foreignId('category_id')->constrained('categories');
+            $table->timestamps();
+        });
     }
 
     /**

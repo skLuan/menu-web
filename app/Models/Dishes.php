@@ -4,16 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Category extends Model
+class Dishes extends Model
 {
     use HasFactory;
     public function multimedia()
     {
         return $this->hasMany(Multimedia_url::class);
     }
-    public function dishes()
+
+    public function category(): BelongsTo
     {
-        return $this->hasMany(Dishes::class);
+        return $this->belongsTo(Category::class);
     }
 }
