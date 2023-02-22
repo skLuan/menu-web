@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('principal_tags', function (Blueprint $table) {
-            $table->id();
-            $table->string('tag_name');
+        Schema::create('categories_multimedia_urls', function (Blueprint $table) {
+            $table->foreignId('category_id')->nullable()->constrained();
+            $table->foreignId('multimedia_url_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

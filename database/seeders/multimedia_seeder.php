@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Multimedia_type;
 use App\Models\Multimedia_url;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -19,6 +20,9 @@ class multimedia_seeder extends Seeder
     public function run()
     {
         $category = Category::get();
+
+        $iconType = Multimedia_type::firstWhere('name', 'icon');
+
         define('ICONS', '/image/icons/');
         $icon_url = '';
         foreach ($category as $c) {
@@ -47,10 +51,8 @@ class multimedia_seeder extends Seeder
                 break;
             }
             $multi->url = $icon_url;
-            $multi->type = 0;
+            $multi->type()->associate($iconType);
             $multi->save();
-            $c->icon_multimedia_id = $multi->id;
-            $c->save();
         }
     }
 }

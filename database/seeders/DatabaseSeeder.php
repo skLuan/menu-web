@@ -15,10 +15,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            Multimedia_types::class,
+            Food_types_seeder::class,
+            Tags_seeder::class,
             categories::class,
             multimedia_seeder::class,
-            principal_tags::class,
-            dishes_seeder::class,
+            Food_preparations_seeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

@@ -20,7 +20,7 @@ class categories extends Seeder
 
         foreach ($cat as $i => $c) {
             $cat = new Category();
-            $cat->cat_name = $c;
+            $cat->name = $c;
             // $cat->icon()->associate($i);
             $cat->save();
 

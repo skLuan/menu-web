@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 
-class principal_tags extends Seeder
+class Tags_seeder extends Seeder
 {
     /**
      * Run the daphptabase seeds.
@@ -16,11 +16,11 @@ class principal_tags extends Seeder
      */
     public function run()
     {
-        $tags = ['dish', 'extra', 'vegetarian', 'veggie'];
+        $tags = ['vegetarian', 'veggie'];
 
         foreach ($tags as $c) {
-            DB::table('principal_tags')->insert([
-                'tag_name' => $c,
+            DB::table('tags')->insert([
+                'name' => $c,
             ]);
         }
     }
