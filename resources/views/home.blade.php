@@ -151,11 +151,11 @@
             <div class="grid justify-items-center">
                 <p>Siguénos:</p>
                 <div>
-                    <a href="#" class="text-white">
-                        <i class="fa-brands fa-facebook"></i>
+                    <a href="#" class="text-gray hover:text-white mr-5">
+                        <i class="fa-brands fa-facebook fa-3x"></i>
                     </a>
-                    <a href="#" class="text-white">
-                        <i class="fa-brands fa-instagram"></i>
+                    <a href="#" class="text-gray hover:text-white">
+                        <i class="fa-brands fa-instagram fa-3x"></i>
                     </a>
                 </div>
             </div>
