@@ -14,12 +14,9 @@ return new class extends Migration
     public function up()
     {
         //
-        Schema::create('dishes', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->string('dish_name');
-            $table->text('description');
-            $table->float('price');
-            $table->foreignId('category_id');
+            $table->string('name', 100);
             $table->timestamps();
         });
     }

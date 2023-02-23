@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 100);
-            $table->foreignId('multimedia_url_id')->nullable();
+        Schema::create('food_preparations_multimedia_urls', function (Blueprint $table) {
+            $table->foreignId('food_preparation_id')->nullable()->constrained();
+            $table->foreignId('multimedia_url_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

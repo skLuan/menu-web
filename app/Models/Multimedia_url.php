@@ -5,21 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Multimedia_url extends Model
 {
     use HasFactory;
 
-    public function dish()
+    public function fPreparations(): BelongsToMany
     {
-        return $this->belongsTo(Dishes::class);
+        return $this->belongsToMany(FoodPreparation::class);
     }
-    public function icon(): BelongsTo
+
+    public function category(): BelongsToMany
     {
-        return $this->belongsTo(Category::class, 'icon_multimedia_id', 'id');
+        return $this->belongsToMany(Category::class, 'categories_multimedia_urls');
     }
-    public function image() : BelongsTo
+
+    public function type(): BelongsTo
     {
-        return $this->belongsTo(Category::class, 'image_multimedia_id', 'id');
+        return $this->belongsTo(Multimedia_type::class, 'id', 'multimedia_type_id');
     }
 }

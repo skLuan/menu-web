@@ -10,6 +10,7 @@ class Pagecontroller extends Controller
 {
     public function menu(){
         $categories = Category::get();
+
         return view('menu', ['categories' => $categories]);
     }
 
