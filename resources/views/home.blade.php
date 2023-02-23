@@ -17,4 +17,21 @@
         </div>
     </div>
 
+    <div class="w-full flex justify-evenly mt-9">
+        <a href="/reservas" class="text-white underline">Reservas</a>
+        <button class="btn btn-outline-primary" type="button">Ir a la carta</button>
+    </div>
+
+    <div class="grid mt-12 text-white">
+        <p class="text-center"><img class="inline h-[98px]" src="{{ Vite::asset('resources/img/icons/logo.svg') }}" alt="Meson jesus"></p>
+        <p class="text-center">EST. 1972</p>
+        <div class="mt-6">
+            <h6 class="text-center">Años de tradición</h6>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ullamcorper ipsum. Suspendisse commodo volutpat placerat. Donec mauris erat, cursus at pulvinar non, laoreet eget mauris. Suspendisse luctus condimentum libero, a egestas neque imperdiet pulvinar. Fusce vitae consequat lacus, id bibendum orci. Nunc condimentum egestas volutpat. Aenean convallis egestas justo eu pharetra. In varius convallis egestas. Ut eleifend augue ut ipsum sodales, in auctor eros consectetur. Duis aliquet urna id fermentum pretium. Donec eget placerat mauris.
+            </p>
+        </div>
+
+    </div>
+
 </x-layouts.general>
