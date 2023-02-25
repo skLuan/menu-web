@@ -5,10 +5,13 @@ import "iconify-icon";
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
 import './selectCat';
+import dishModal from './dishModal';
 
 
 window.Alpine = Alpine;
 Alpine.start();
+
+dishModal();
 
 var breadcrumbMenu = new Swiper("#breadcrumb-menu", {
     slidesPerView: 4,
