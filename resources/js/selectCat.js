@@ -12,16 +12,15 @@ fetch("/api/catActiveImage")
         console.log(urls);
     })
 
-try {
-    // ---------------- Categories selector
-    let categories = document.getElementById("titles").querySelectorAll(".cat");
-    let breadcrumbs = document
-        .getElementById("breadcrumb-menu")
-        .querySelectorAll(".cat");
-    let itemMenu = document
-        .getElementById("swiper-menu")
-        .querySelectorAll(".cat");
-
+    try {
+        // ---------------- Categories selector
+        let categories = document.getElementById("titles").querySelectorAll(".cat");
+        let breadcrumbs = document
+            .getElementById("breadcrumb-menu")
+            .querySelectorAll(".cat");
+            let itemMenu = document
+                .getElementById("swiper-menu")
+                .querySelectorAll(".cat");
     let cleaning = (array) => {
         array.forEach((cat, i) => {
             try {
@@ -42,25 +41,62 @@ try {
     };
 
     categories.forEach((cat, i) => {
+        let title = cat.querySelector("h3");
+        let bread = breadcrumbs[i];
+        let menuItem = itemMenu[i];
+
         cat.addEventListener("click", () => {
             cleaning(categories);
             cleaning(breadcrumbs);
-            let title = cat.querySelector("h3");
-            let bread = breadcrumbs[i];
 
-            let menuItem = itemMenu[i];
+            menuItem
+                .querySelector(".plateIcon")
+                .setAttribute("src", plateActive);
+            title.classList.add("!text-red-navigation");
+            bread.classList.add("!text-red-navigation", "!font-medium");
+
+            // console.log(cat.querySelector("h3").classList);
+            if(urls != undefined || urls != null) {
+                menuItem.querySelector(".catIcon").setAttribute("src", urls[i][1]);
+            }
+        });
+
+        menuItem.addEventListener("click", () => {
+            cleaning(categories);
+            cleaning(breadcrumbs);
             menuItem
                 .querySelector(".plateIcon")
                 .setAttribute("src", plateActive);
 
-            if(urls != undefined || urls != null) {
-                menuItem.querySelector(".catIcon").setAttribute("src", urls[i][1]);
+            title.classList.add("!text-red-navigation");
+            bread.classList.add("!text-red-navigation", "!font-medium");
+
+            // console.log(cat.querySelector("h3").classList);
+            if (urls != undefined || urls != null) {
+                menuItem
+                    .querySelector(".catIcon")
+                    .setAttribute("src", urls[i][1]);
             }
+        });
+
+        bread.addEventListener("click", () => {
+            cleaning(categories);
+            cleaning(breadcrumbs);
+            menuItem
+                .querySelector(".plateIcon")
+                .setAttribute("src", plateActive);
 
             title.classList.add("!text-red-navigation");
-            bread.classList.add("!text-red-navigation");
+            bread.classList.add("!text-red-navigation", "!font-medium");
+
             // console.log(cat.querySelector("h3").classList);
+            if (urls != undefined || urls != null) {
+                menuItem
+                    .querySelector(".catIcon")
+                    .setAttribute("src", urls[i][1]);
+            }
         });
+
     });
 } catch (err) {
     console.log(err);

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Nav;
 
 use Illuminate\View\Component;
 
-class categorySideBar extends Component
+class breadcrumb extends Component
 {
     public $categories;
     /**
@@ -14,7 +14,6 @@ class categorySideBar extends Component
      */
     public function __construct($categories)
     {
-        //
         $this->categories = $categories;
     }
 
@@ -25,6 +24,6 @@ class categorySideBar extends Component
      */
     public function render()
     {
-        return view('components.category-side-bar');
+        return view('components.nav.breadcrumb');
     }
 }

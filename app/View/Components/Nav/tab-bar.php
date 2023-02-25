@@ -1,13 +1,11 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Nav;
 
 use Illuminate\View\Component;
-use App\Models\Category;
 
-class navigation extends Component
+class tabBar extends Component
 {
-    public $categories;
     /**
      * Create a new component instance.
      *
@@ -16,7 +14,6 @@ class navigation extends Component
     public function __construct()
     {
         //
-        $this->categories = Category::get();
     }
 
     /**
@@ -26,6 +23,6 @@ class navigation extends Component
      */
     public function render()
     {
-        return view('components.navigation');
+        return view('components.nav.tab-bar');
     }
 }
