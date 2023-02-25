@@ -17,20 +17,20 @@
     <x-navigation></x-navigation>
 
     <div id="titles" class="overflow-scroll h-[76vh]">
-        <div class="swiper-wrapper relative">
-            <div class="bg-black-true absolute right-0 w-20 h-full"></div>
+        <div class="relative grid grid-cols-5">
             @foreach ($categories as $cat)
-                <div id="{{$cat->name}}" class="cat cursor-pointer grid grid-cols-5 bg-slate-500 swiper-slide first:mt-5 mb-16 last:mb-10">
-                    <h3 class="text-white my-auto col-span-4 font-semibold text-[22px] text-right pr-5">{{ $cat->name }}</h3>
-                    <div class="bg-black-true relative col-span-1 py-4">
-                        <img class="m-auto" src="{{ Vite::asset('resources/img/icons/iconPlate.svg') }}" alt="icon">
-                        <picture><img src="" alt=""></picture>
-                    </div>
+                <div id="{{ $cat->name }}"
+                    class="cat cat-{{ $cat->id }} cursor-pointer col-span-4 bg-slate-500 first:mt-5">
+                    <picture class="absolute left-0 -top-1">
+                        {{-- <img class="" src="{{ $ }}"
+                            alt="icon"> --}}
+                    </picture>
+                    <h3 class="text-white my-auto font-semibold text-[22px] text-right pr-5">{{ $cat->name }}</h3>
                 </div>
-                <article class="text-white">
-                    <pre>
-                        {{ $cat->foodPreparations()->get()}}
-                    </pre>
+                <article class="text-white col-start-1 col-span-4 mb-5 last:mb-10">
+                    <p>
+                        {{ $cat->foodPreparations()->value('name') }}
+                    </p>
                 </article>
             @endforeach
         </div>
