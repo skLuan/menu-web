@@ -1,22 +1,26 @@
 let cambioPos = (cat, i) => {
     try {
+        let title = document
+            .getElementById("titles");
         let categories = document
             .getElementById("titles")
             .querySelectorAll(".cat");
         let catContainer = document
             .getElementById("titles")
             .querySelector(".catContainer");
-        let currentY = catContainer.offsetTop;
 
+        let currentLocation = title.scrollTop;
         let yReference = 139;
 
-        let diff = yReference - (70*(i+2));
+        let diff = (70*(i));
+        setTimeout(() => {
 
-        catContainer.style.top = `${ diff }px`;
+            title.scrollTop = currentLocation + diff;
+            console.log('valr:');
+            console.log(title.scrollTop);
+            console.log('ref: ' + title.scrollHeight);
+        }, 10);
         // console.log(yReference);
-        console.log('valr:');
-        console.log(diff);
-        console.log('ref: ' + yReference);
 
     } catch (err) {
         console.log(err);
