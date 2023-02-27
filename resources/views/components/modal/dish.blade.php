@@ -19,4 +19,4 @@
         </div>
     </div>
 </article>
-{{-- <div class="modalBlack hidden absolute top-0 left-0 w-screen h-screen bg-black-true opacity-80 z-20"></div> --}}
+<div class="modalBlack hidden absolute top-0 left-0 w-screen h-screen bg-black-true opacity-80 z-20"></div>

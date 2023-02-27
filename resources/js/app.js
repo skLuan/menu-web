@@ -11,7 +11,11 @@ import dishModal from './dishModal';
 window.Alpine = Alpine;
 Alpine.start();
 
-dishModal();
+try {
+    dishModal();
+} catch (error) {
+
+}
 
 var breadcrumbMenu = new Swiper("#breadcrumb-menu", {
     slidesPerView: 4,
@@ -27,7 +31,6 @@ var swiperMenu = new Swiper("#swiper-menu", {
         autoScrollOffset: 1,
     },
 });
-
 
 
 var swiperHome = new Swiper(".swiper-home", {

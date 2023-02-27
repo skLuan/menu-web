@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('food_preparations', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->float('price');
             $table->foreignId('food_type_id')->nullable();
             $table->foreignId('category_id');
