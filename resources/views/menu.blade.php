@@ -17,20 +17,20 @@
     <x-nav.navigation></x-nav.navigation>
 
     <div id="titles" class="overflow-scroll h-[76vh]">
-        <div class="grid grid-cols-5">
+        <div id="" class="catContainer relative grid grid-cols-5">
             @foreach ($categories as $cat)
             @php
                 $dishes = $cat->foodPreparations;
             @endphp
                 <div id="{{ $cat->name }}"
-                    class="cat cat-{{ $cat->id }} relative cursor-pointer col-span-4 bg-slate-500 first:mt-5">
+                    class="cat cat-{{ $cat->id }} relative cursor-pointer col-span-4 bg-slate-500 first:mt-5 my-5">
                     <picture class="absolute left-0 -top-1">
                         {{-- <img class="" src="{{ $ }}"
                             alt="icon"> --}}
                     </picture>
                     <h3 class="text-white my-auto font-semibold text-[22px] text-right pr-5">{{ $cat->name }}</h3>
                 </div>
-                <div class="dishes cat-{{$cat->id}} text-white col-start-1 col-span-4 mb-5 last:mb-10">
+                <div class="dishesContainer hidden cat-{{$cat->id}} text-white col-start-1 col-span-4 mb-5 last:mb-10">
                     @foreach ($dishes as $dish)
                     <x-cards.dish-card :$dish></x-cards.dish-card>
                     @endforeach

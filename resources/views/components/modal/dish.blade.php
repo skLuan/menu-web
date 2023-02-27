@@ -8,7 +8,7 @@
         <h3 class="touch text-white font-bold text-lg leading-tight pl-1">
             {{ $dish->name }}
         </h3>
-        <p class="text-right font-medium text-2xl border-b border-b-white border-opacity-20 text-white pl-1">{{ $dish->price }}</p>
+        <p class="text-right font-medium text-2xl border-b border-b-white border-opacity-20 text-white pl-1">{{ $dish->price }} <span class="text-[12px]">€</span></p>
         <p class="pl-1">
             {{ $dish->description }}
         </p>

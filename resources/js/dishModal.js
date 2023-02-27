@@ -32,5 +32,9 @@ export default () => {
         dish.querySelector(".modalBlack").addEventListener("click", () => {
             removerClaseEnElementos(dish);
         });
+
+        dish
+
     });
+
 };
