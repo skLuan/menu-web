@@ -30,7 +30,7 @@ Route::controller(Pagecontroller::class)->group(function () {
 
     Route::get('menu', 'menu')->name('menu');
     Route::get('/', 'home')->name('home');
-    Route::get('reserve', 'reserve')->name('reserve');
+    Route::get('reservas', 'reserves')->name('reserves');
 
 });
 

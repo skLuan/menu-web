@@ -18,7 +18,8 @@ class Pagecontroller extends Controller
         return view('home');
     }
 
-    public function reserve(){
+    public function reserves(){
+        return view('reserves');
 
     }
 }
