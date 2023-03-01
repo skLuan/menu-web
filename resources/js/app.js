@@ -24,6 +24,7 @@ let sidebar = document.getElementById("sideBar");
 
 tabClick.addEventListener("click", () => {
     toggleHidden(sidebar);
+    tabClick.classList.toggle('!text-red-navigation');
 });
 
 var breadcrumbMenu = new Swiper("#breadcrumb-menu", {
