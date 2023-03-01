@@ -17,7 +17,7 @@
     <x-nav.navigation :$categories></x-nav.navigation>
 
     <div id="titles" class="overflow-scroll h-[76vh]">
-        <div id="" class="catContainer relative grid grid-cols-5 pb-14">
+        <div id="" class="catContainer grid grid-cols-5 pb-14">
             @foreach ($categories as $cat)
             @php
                 $dishes = $cat->foodPreparations;
