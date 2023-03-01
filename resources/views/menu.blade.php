@@ -14,7 +14,7 @@
 
 <body class="relative antialiased bg-black">
     <x-header></x-header>
-    <x-nav.navigation></x-nav.navigation>
+    <x-nav.navigation :$categories></x-nav.navigation>
 
     <div id="titles" class="overflow-scroll h-[76vh]">
         <div id="" class="catContainer relative grid grid-cols-5 pb-14">
