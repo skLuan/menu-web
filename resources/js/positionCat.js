@@ -13,7 +13,7 @@ let cambioPos = (cat, i) => {
         let currentLocation = title.scrollTop;
         let yReference = 139;
 
-        let diff = 70 * i;
+        let diff = 73 * i;
         swiperMenu.slideTo(i);
         setTimeout(() => {
             title.scrollTop = currentLocation + diff;

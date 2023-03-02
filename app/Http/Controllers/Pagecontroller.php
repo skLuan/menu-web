@@ -13,6 +13,11 @@ class Pagecontroller extends Controller
 
         return view('menu', ['categories' => $categories]);
     }
+    public function menuClean(){
+        $categories = Category::get();
+
+        return view('menuClean', ['categories' => $categories]);
+    }
 
     public function home(){
         return view('home');
