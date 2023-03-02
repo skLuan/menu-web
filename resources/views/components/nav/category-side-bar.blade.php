@@ -1,4 +1,4 @@
-<div id="swiper-menu" class="fixed bg-black-true w-[76px] px-4 flex flex-col right-0 h-[76vh] py-5 overflow-x-hidden z-10">
+<div id="swiper-menu" class="fixed border-l border-red-navigation border-opacity-20 bg-black-true w-[76px] px-4 flex flex-col right-0 h-[76vh] py-5 overflow-x-hidden z-10">
     <div class="swiper-wrapper">
         @foreach ($categories as $cat)
         <div id="" class="cat cat-{{$cat->id}} relative swiper-slide w-11">
