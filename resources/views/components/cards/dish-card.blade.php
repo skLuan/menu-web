@@ -1,8 +1,8 @@
 <div class="dishCard pl-5 pr-[15px] pt-[15px]">
-    <div class="touch w-full h-[120px] bg-gray rounded-md mb-3">
-        {{-- <img src="" alt=""> --}}
-    </div>
-    <h3 class="touch text-white font-bold text-lg leading-tight pl-1">
+    <picture class="touch w-full max-h-[120px] bg-gray rounded-md">
+        <img class="rounded-md" src="/image/preparations/{{$dish->id}}.png" alt="">
+    </picture>
+    <h3 class="touch text-white font-bold text-lg leading-tight pl-1 pt-3">
         {{ $dish->name }}
     </h3>
     <p class="text-right border-b border-b-white border-opacity-20 pl-1">{{$dish->price}} <span class="text-[12px]">€</span></p>
