@@ -19,6 +19,9 @@ class language extends Component
 
     }
 
+    public function getLocale(){
+        return $this->locale;
+    }
     /**
      * Get the view / contents that represent the component.
      *
