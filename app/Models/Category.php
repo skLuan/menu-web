@@ -26,6 +26,10 @@ class Category extends Model
     {
         return $this->belongsToMany(Multimedia_url::class, 'categories_multimedia_urls');
     }
+    public function icon(): BelongsToMany
+    {
+        return $this->belongsToMany(Multimedia_url::class, 'categories_multimedia_urls');
+    }
 
 
     public function foodPreparations(): HasMany
