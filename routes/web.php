@@ -33,7 +33,7 @@ Route::controller(Pagecontroller::class)->group(function () {
     // Route::redirect('/','/en');
 
     Route::get('/{locale}', 'home')->name('home');
-    Route::get('/', 'home')->name('home');
+    Route::redirect('/', 'home');
     Route::get('reserves', 'reserves')->name('reserves');
 });
 require __DIR__.'/auth.php';
