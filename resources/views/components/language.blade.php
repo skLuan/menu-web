@@ -3,7 +3,7 @@
     $en = '';
     $es = '';
     $fr = '';
-    switch ($getLocale()) {
+    switch ($locale) {
         case 'en':
         $en = $activeClass;
             break;

@@ -5,7 +5,7 @@ namespace App\View\Components;
 use Illuminate\Support\Facades\App;
 use Illuminate\View\Component;
 
-class language extends Component
+class Language extends Component
 {
     public $locale;
     /**
@@ -13,13 +13,14 @@ class language extends Component
      *
      * @return void
      */
-    public function __construct($locale = null)
+    public function __construct(string $locale = '')
     {
         $this->locale = $locale ?? APP::currentLocale();
 
     }
 
-    public function getLocale(){
+    public function getLocale(): string 
+    {
         return $this->locale;
     }
     /**
@@ -29,6 +30,6 @@ class language extends Component
      */
     public function render()
     {
-        return view('components.language');
+        return view('components.language',);
     }
 }
