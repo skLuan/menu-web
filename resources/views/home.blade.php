@@ -18,9 +18,8 @@
     </div>
 
     <div class="w-full flex justify-evenly items-center mt-9">
-        <a href="/reservas" class="text-white underline">Reservas</a>
-        <a href="/menu" class="block bg-red-navigation text-white font-medium px-3 py-1" type="button">Ir a la
-            carta</a>
+        <a href="/reservas" class="text-white underline">{{__('general.goReserve')}}</a>
+        <a href="/menu" class="block bg-red-navigation text-white font-medium px-3 py-1" type="button">{{__('general.gomenu')}}</a>
     </div>
 
     <div class="container mx-auto px-5 mt-12 text-white">
@@ -28,12 +27,9 @@
                 alt="Meson jesus"></p>
         <p class="text-center">EST. 1972</p>
         <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">Años de tradición</h6>
+            <h6 class="text-center mb-4">{{__('home.titleTradition')}}</h6>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ullamcorper ipsum. Suspendisse
-                commodo volutpat placerat. Donec mauris erat, cursus at pulvinar non, laoreet eget mauris. Suspendisse
-                luctus condimentum libero, a egestas neque imperdiet pulvinar. Fusce vitae consequat lacus, id bibendum
-                orci.
+                {{__('home.tradition')}}
             </p>
         </div>
     </div>
@@ -44,12 +40,9 @@
 
     <div class="container mx-auto px-5 mt-12 text-white">
         <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">Cocina especial</h6>
+            <h6 class="text-center mb-4">{{__('home.titleKitchen')}}</h6>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ullamcorper ipsum. Suspendisse
-                commodo volutpat placerat. Donec mauris erat, cursus at pulvinar non, laoreet eget mauris. Suspendisse
-                luctus condimentum libero, a egestas neque imperdiet pulvinar. Fusce vitae consequat lacus, id bibendum
-                orci.
+                {{__('home.kitchen')}}
             </p>
         </div>
     </div>
@@ -80,10 +73,10 @@
 
     <div class="container mx-auto px-5 mt-12 text-white">
         <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">Cerca al Mesón</h6>
+            <h6 class="text-center mb-4">{{__('home.titleNear')}}</h6>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ullamcorper ipsum. Suspendisse
-                commodo volutpat placerat.
+                {{__('home.near')}}
+
             </p>
         </div>
     </div>
@@ -94,7 +87,7 @@
 
     <div class="container mx-auto px-5 mt-12 text-white">
         <div class="grid grid-flow-row">
-            <h6 class="text-left">La iglesia de Pi</h6>
+            <h6 class="text-left">{{__('home.titlePi')}}</h6>
         </div>
     </div>
 
@@ -104,8 +97,7 @@
 
     <div class="container mx-auto px-5">
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ullamcorper ipsum. Suspendisse
-            commodo volutpat placerat.
+            {{__('home.piChurch')}}
         </p>
     </div>
 
@@ -145,10 +137,10 @@
     <div class="w-full flex flex-col items-center mt-9">
         <div class="mb-5">
             <a href="/reservas" class="block bg-red-navigation text-white font-medium px-3 py-1"
-                type="button">Reservar</a>
+                type="button">{{__('general.goReserve')}}</a>
         </div>
         <div class="mb-5">
-            <a href="/menu" class="text-white underline">Ver la carta</a>
+            <a href="/menu" class="text-white underline">{{__('general.gomenu')}}</a>
         </div>
     </div>
 

@@ -14,11 +14,9 @@ fetch("/api/catActiveImage")
     });
 
 // ---------------- Categories selector
-let categories = document.getElementById("titles").querySelectorAll(".cat");
-let breadcrumbs = document
-    .getElementById("breadcrumb-menu")
-    .querySelectorAll(".cat");
-let itemMenu = document.getElementById("swiper-menu").querySelectorAll(".cat");
+let categories = undefined;
+let breadcrumbs = undefined;
+let itemMenu = undefined;
 let iconCloseMenu = document.getElementById("icon-close-menu");
 
 const toogleDishes = (container) => {
@@ -28,8 +26,6 @@ const toogleDishes = (container) => {
 let closeMenuController = (imageElement, iconMenu) => {
     imageElement.setAttribute("src", iconMenu);
 };
-
-
 
 let cleaning = (array) => {
     //---------------Metodo que remueve clases
@@ -59,90 +55,100 @@ let cleaning = (array) => {
 };
 
 let cleanAll = () => {
+    categories = document.getElementById("titles").querySelectorAll(".cat");
+    breadcrumbs = document
+        .getElementById("breadcrumb-menu")
+        .querySelectorAll(".cat");
+    itemMenu = document.getElementById("swiper-menu").querySelectorAll(".cat");
     console.log("voy a cerrar el menu");
     let arrays = [categories, breadcrumbs, itemMenu];
     arrays.forEach((array) => {
         cleaning(array);
     });
     console.log("Cerrado");
+};
+let controllerCategory = () => {
+    try {
+        categories = document.getElementById("titles").querySelectorAll(".cat");
+        breadcrumbs = document
+            .getElementById("breadcrumb-menu")
+            .querySelectorAll(".cat");
+        itemMenu = document
+            .getElementById("swiper-menu")
+            .querySelectorAll(".cat");
+        categories.forEach((cat, i) => {
+            let title = cat.querySelector("h3");
+            let bread = breadcrumbs[i];
+            let menuItem = itemMenu[i];
 
+            cat.addEventListener("click", () => {
+                cleaning(categories);
+                cleaning(breadcrumbs);
+
+                menuItem
+                    .querySelector(".plateIcon")
+                    .setAttribute("src", plateActive);
+                title.classList.add("!text-red-navigation");
+                bread.classList.add("!text-red-navigation", "!font-medium");
+
+                // console.log(cat.querySelector("h3").classList);
+                if (urls != undefined || urls != null) {
+                    menuItem
+                        .querySelector(".catIcon")
+                        .setAttribute("src", urls[i][1]);
+                }
+                cambioPos(cat, i);
+                toogleDishes(cat.nextElementSibling);
+                moveBread(bread, i);
+                console.log(iconCloseMenu);
+                closeMenuController(iconCloseMenu, iconOpenMenu);
+            });
+
+            menuItem.addEventListener("click", () => {
+                cleaning(categories);
+                cleaning(breadcrumbs);
+                menuItem
+                    .querySelector(".plateIcon")
+                    .setAttribute("src", plateActive);
+
+                title.classList.add("!text-red-navigation");
+                bread.classList.add("!text-red-navigation", "!font-medium");
+
+                // console.log(cat.querySelector("h3").classList);
+                if (urls != undefined || urls != null) {
+                    menuItem
+                        .querySelector(".catIcon")
+                        .setAttribute("src", urls[i][1]);
+                }
+                cambioPos(cat, i);
+                toogleDishes(cat.nextElementSibling);
+                moveBread(bread, i);
+            });
+
+            bread.addEventListener("click", () => {
+                cleaning(categories);
+                cleaning(breadcrumbs);
+                menuItem
+                    .querySelector(".plateIcon")
+                    .setAttribute("src", plateActive);
+
+                title.classList.add("!text-red-navigation");
+                bread.classList.add("!text-red-navigation", "!font-medium");
+
+                // console.log(cat.querySelector("h3").classList);
+                if (urls != undefined || urls != null) {
+                    menuItem
+                        .querySelector(".catIcon")
+                        .setAttribute("src", urls[i][1]);
+                }
+                cambioPos(cat, i);
+                toogleDishes(cat.nextElementSibling);
+                moveBread(bread, i);
+            });
+        });
+    } catch (err) {
+        console.log(err);
+    }
 };
 
-try {
-    categories.forEach((cat, i) => {
-        let title = cat.querySelector("h3");
-        let bread = breadcrumbs[i];
-        let menuItem = itemMenu[i];
-
-        cat.addEventListener("click", () => {
-            cleaning(categories);
-            cleaning(breadcrumbs);
-
-            menuItem
-                .querySelector(".plateIcon")
-                .setAttribute("src", plateActive);
-            title.classList.add("!text-red-navigation");
-            bread.classList.add("!text-red-navigation", "!font-medium");
-
-            // console.log(cat.querySelector("h3").classList);
-            if (urls != undefined || urls != null) {
-                menuItem
-                    .querySelector(".catIcon")
-                    .setAttribute("src", urls[i][1]);
-            }
-            cambioPos(cat, i);
-            toogleDishes(cat.nextElementSibling);
-            moveBread(bread, i);
-            console.log(iconCloseMenu);
-            closeMenuController(iconCloseMenu, iconOpenMenu);
-
-        });
-
-        menuItem.addEventListener("click", () => {
-            cleaning(categories);
-            cleaning(breadcrumbs);
-            menuItem
-                .querySelector(".plateIcon")
-                .setAttribute("src", plateActive);
-
-            title.classList.add("!text-red-navigation");
-            bread.classList.add("!text-red-navigation", "!font-medium");
-
-            // console.log(cat.querySelector("h3").classList);
-            if (urls != undefined || urls != null) {
-                menuItem
-                    .querySelector(".catIcon")
-                    .setAttribute("src", urls[i][1]);
-            }
-            cambioPos(cat, i);
-            toogleDishes(cat.nextElementSibling);
-            moveBread(bread, i);
-
-        });
-
-        bread.addEventListener("click", () => {
-            cleaning(categories);
-            cleaning(breadcrumbs);
-            menuItem
-                .querySelector(".plateIcon")
-                .setAttribute("src", plateActive);
-
-            title.classList.add("!text-red-navigation");
-            bread.classList.add("!text-red-navigation", "!font-medium");
-
-            // console.log(cat.querySelector("h3").classList);
-            if (urls != undefined || urls != null) {
-                menuItem
-                    .querySelector(".catIcon")
-                    .setAttribute("src", urls[i][1]);
-            }
-            cambioPos(cat, i);
-            toogleDishes(cat.nextElementSibling);
-            moveBread(bread, i);
-        });
-    });
-} catch (err) {
-    console.log(err);
-}
-
-export { cleanAll, closeMenuController };
+export { cleanAll, closeMenuController, controllerCategory };
