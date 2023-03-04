@@ -21,4 +21,8 @@ class Pagecontroller extends Controller
     public function reserve(){
 
     }
+
+    public function reserva(){
+        return view('reserva');
+    }
 }
