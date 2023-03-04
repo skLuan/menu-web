@@ -53,7 +53,7 @@
 
     <div class="container mx-auto px-5 mt-12 ">
         <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">El restaurante</h6>
+            <h6 class="text-center mb-4">{{__('home.titleTheRestaurant')}}</h6>
         </div>
         <!-- Swiper -->
         <div class="relative w-full h-[40vh]">
@@ -120,14 +120,14 @@
 
     <div class="container mx-auto px-5 mt-12">
         <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">Horario de atención</h6>
+            <h6 class="text-center mb-4">{{__('home.titleOpening')}}</h6>
             <div class="grid justify-items-center">
                 <p class="w-4/5 flex justify-between">
-                    <span>Lun a vier</span>
+                    <span>{{__('home.week')}}</span>
                     <span class="text-white">00:00 - 23:00</span>
                 </p>
                 <p class="w-4/5 flex justify-between">
-                    <span>Sab y dom</span>
+                    <span>{{__('home.weekend')}}</span>
                     <span class="text-white">00:00 - 23:00</span>
                 </p>
             </div>
@@ -147,7 +147,7 @@
     <div class="w-full flex flex-col items-center mt-9">
         <div class="grid grid-flow-row mt-6">
             <div class="grid justify-items-center">
-                <p>Siguénos:</p>
+                <p>{{__('home.titleFollow')}}</p>
                 <div>
                     <a href="#" class="text-gray hover:text-white mr-5">
                         <i class="fa-brands fa-facebook fa-3x"></i>

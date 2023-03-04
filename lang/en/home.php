@@ -5,6 +5,11 @@ return [
     'titleKitchen' => 'Special kitchen',
     'titleNear' => 'Near to the Mesón',
     'titlePi' => 'Pi church',
+    'titleTheRestaurant' => 'The restaurant',
+    'titleOpening' => 'Opening Hours',
+    'titleFollow' => 'Follow us',
+    'week' => 'Mon - Fri',
+    'weekend' => 'Sat - Sun',
     'tradition' => 'Our Spanish restaurant is steeped in tradition, with recipes that have been
 passed down from generation to generation. We take pride in our heritage and
 strive to bring the authentic flavors of Spain to your plate.',

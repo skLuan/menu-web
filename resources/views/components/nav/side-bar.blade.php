@@ -5,4 +5,10 @@
         <a class="py-2" href="/reservas">Reservas</a>
         <a class="py-2" href="/menu">Carta</a>
     </div>
+    <div>
+
+    </div>
+    {{-- @if ($routeName === 'home')
+    @endif --}}
+    <x-language></x-language>
 </div>

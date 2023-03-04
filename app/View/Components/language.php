@@ -2,10 +2,10 @@
 
 namespace App\View\Components;
 
+use Illuminate\Support\Facades\App;
 use Illuminate\View\Component;
-use Mockery\Undefined;
 
-class header extends Component
+class language extends Component
 {
     public $locale;
     /**
@@ -13,8 +13,10 @@ class header extends Component
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($locale = null)
     {
+        $this->locale = $locale ?? APP::currentLocale();
+
     }
 
     /**
@@ -24,6 +26,6 @@ class header extends Component
      */
     public function render()
     {
-        return view('components.header');
+        return view('components.language');
     }
 }

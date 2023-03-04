@@ -19,7 +19,6 @@
                     <picture class="">
                         <img class="" width="100%" src="{{$url}}" alt="icon">
                     </picture>
-                    {{ print_r($url) }}
                     <h3 class="absolute top-1/2 -translate-y-1/2 right-0 text-white my-auto font-semibold text-[22px] text-right pr-5">{{ $cat->name }}</h3>
                 </div>
                 <div

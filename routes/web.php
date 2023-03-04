@@ -30,7 +30,10 @@ Route::controller(Pagecontroller::class)->group(function () {
 
     Route::get('menu', 'menu')->name('menu');
     Route::get('menuClean', 'menuClean')->name('menuClean');
+    // Route::redirect('/','/en');
+
+    Route::get('/{locale}', 'home')->name('home');
     Route::get('/', 'home')->name('home');
-    Route::get('reservas', 'reserves')->name('reserves');
+    Route::get('reserves', 'reserves')->name('reserves');
 });
 require __DIR__.'/auth.php';
