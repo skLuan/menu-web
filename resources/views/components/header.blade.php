@@ -5,5 +5,5 @@
         </picture>
     </a>
 <div class="mx-auto my-auto"><p class="text-gray text-sm font-light">Precios en <span class="font-bold">EUR</span></p></div>
-<x-language locale="sisa"></x-language>
+<x-language ></x-language>
 </header>

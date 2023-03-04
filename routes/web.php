@@ -3,7 +3,6 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Pagecontroller;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,12 +27,14 @@ Route::middleware('auth')->group(function () {
 
 Route::controller(Pagecontroller::class)->group(function () {
 
-    Route::get('menu', 'menu')->name('menu');
+    Route::get('menu/{locale}', 'menu')->name('menu');
+    Route::get('menu', 'menu');
+
     Route::get('menuClean', 'menuClean')->name('menuClean');
     // Route::redirect('/','/en');
 
     Route::get('/{locale}', 'home')->name('home');
-    Route::redirect('/', 'home');
+    Route::get('/', 'home');
     Route::get('reserves', 'reserves')->name('reserves');
 });
 require __DIR__.'/auth.php';

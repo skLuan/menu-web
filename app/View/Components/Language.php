@@ -13,13 +13,13 @@ class Language extends Component
      *
      * @return void
      */
-    public function __construct(string $locale = '')
+    public function __construct(string $locale = null)
     {
         $this->locale = $locale ?? APP::currentLocale();
 
     }
 
-    public function getLocale(): string 
+    public function getLocale(): string
     {
         return $this->locale;
     }

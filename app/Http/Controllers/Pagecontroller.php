@@ -8,7 +8,10 @@ use App\Models\Category;
 
 class Pagecontroller extends Controller
 {
-    public function menu(){
+    public function menu($locale = null){
+        if (is_null($locale)) $locale = 'en';
+
+        App::setlocale($locale);
         $categories = Category::get();
 
         return view('menu', ['categories' => $categories]);
