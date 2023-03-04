@@ -3,19 +3,20 @@
 namespace App\View\Components\Nav;
 
 use App\Models\Category;
+use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 
 class navigation extends Component
 {
-    public $categories;
+    public $cat;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(public $categories)
     {
-        $this->categories = Category::all();
+        $this->cat = Category::all();
     }
 
     /**
@@ -25,6 +26,6 @@ class navigation extends Component
      */
     public function render()
     {
-        return view('components.nav.navigation');
+        return view('components.nav.navigation',['cat' => $this->cat]);
     }
 }

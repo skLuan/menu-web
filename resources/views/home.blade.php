@@ -17,9 +17,10 @@
         </div>
     </div>
 
-    <div class="w-full flex justify-evenly mt-9">
+    <div class="w-full flex justify-evenly items-center mt-9">
         <a href="/reservas" class="text-white underline">Reservas</a>
-        <button class="btn btn-outline-primary" type="button">Ir a la carta</button>
+        <a href="/menu" class="block bg-red-navigation text-white font-medium px-3 py-1" type="button">Ir a la
+            carta</a>
     </div>
 
     <div class="container mx-auto px-5 mt-12 text-white">
@@ -114,10 +115,14 @@
         </div>
         <!-- Geolocalizacion -->
         <div class="w-full">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9259870462943!2d-74.08012189517038!3d4.607271938439609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99752f2643dd%3A0x87aec1aa947582fd!2sEl%20Meson%20De%20Jes%C3%BAs!5e0!3m2!1ses!2sco!4v1677189812190!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9259870462943!2d-74.08012189517038!3d4.607271938439609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99752f2643dd%3A0x87aec1aa947582fd!2sEl%20Meson%20De%20Jes%C3%BAs!5e0!3m2!1ses!2sco!4v1677189812190!5m2!1ses!2sco"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="w-full grid justify-items-end mt-4">
-            <a class="color-primary font-semibold underline" href="https://goo.gl/maps/Lx5DS26yr8GtQ4DKA" target="_blank" >Ir a maps</a>
+            <a class="color-primary font-semibold underline" href="https://goo.gl/maps/Lx5DS26yr8GtQ4DKA"
+                target="_blank">Ir a maps</a>
         </div>
     </div>
 
@@ -139,10 +144,11 @@
 
     <div class="w-full flex flex-col items-center mt-9">
         <div class="mb-5">
-            <button class="btn btn-outline-primary" type="button">Reservar</button>
+            <a href="/reservas" class="block bg-red-navigation text-white font-medium px-3 py-1"
+                type="button">Reservar</a>
         </div>
         <div class="mb-5">
-            <a href="/reservas" class="text-white underline">Ver la carta</a>
+            <a href="/menu" class="text-white underline">Ver la carta</a>
         </div>
     </div>
 
@@ -161,6 +167,5 @@
             </div>
         </div>
     </div>
-
-
+    <x-nav.tab-bar></x-nav.tab-bar>
 </x-layouts.general>

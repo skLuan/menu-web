@@ -1,6 +1,9 @@
 import plateActive from "../img/icons/iconPlateActive.svg";
+import iconOpenMenu from "../img/icons/menu-open.svg";
+
 import plate from "../img/icons/iconPlate.svg";
-import { cambioPos } from "./positionCat";
+import { cambioPos, moveBread } from "./positionCat";
+
 let urls;
 fetch("/api/catActiveImage")
     .then((response) => {
@@ -10,39 +13,62 @@ fetch("/api/catActiveImage")
         urls = data;
     });
 
+// ---------------- Categories selector
+let categories = document.getElementById("titles").querySelectorAll(".cat");
+let breadcrumbs = document
+    .getElementById("breadcrumb-menu")
+    .querySelectorAll(".cat");
+let itemMenu = document.getElementById("swiper-menu").querySelectorAll(".cat");
+let iconCloseMenu = document.getElementById("icon-close-menu");
+
 const toogleDishes = (container) => {
     container.classList.toggle("hidden");
 };
 
-try {
-    // ---------------- Categories selector
-    let categories = document.getElementById("titles").querySelectorAll(".cat");
-    let breadcrumbs = document
-        .getElementById("breadcrumb-menu")
-        .querySelectorAll(".cat");
-    let itemMenu = document
-        .getElementById("swiper-menu")
-        .querySelectorAll(".cat");
-    let cleaning = (array) => {
-        array.forEach((cat, i) => {
-            try {
-                let title = cat.querySelector("h3");
-                title.classList.remove("!text-red-navigation");
-                let menuItem = itemMenu[i];
-                menuItem.querySelector(".plateIcon").setAttribute("src", plate);
+let closeMenuController = (imageElement, iconMenu) => {
+    imageElement.setAttribute("src", iconMenu);
+};
 
-                if (urls != undefined || urls != null) {
-                    menuItem
-                        .querySelector(".catIcon")
-                        .setAttribute("src", urls[i][0]);
-                }
-            } catch (error) {
-                cat.classList.remove("!text-red-navigation");
+
+
+let cleaning = (array) => {
+    //---------------Metodo que remueve clases
+    array.forEach((cat, i) => {
+        try {
+            let title = cat.querySelector("h3");
+            title.classList.remove("!text-red-navigation");
+            let menuItem = itemMenu[i];
+            menuItem.querySelector(".plateIcon").setAttribute("src", plate);
+
+            if (
+                cat.parentNode.classList.contains("catContainer") &&
+                !cat.nextElementSibling.classList.contains("hidden")
+            ) {
+                toogleDishes(cat.nextElementSibling);
             }
-        });
-    };
 
+            if (urls != undefined || urls != null) {
+                menuItem
+                    .querySelector(".catIcon")
+                    .setAttribute("src", urls[i][0]);
+            }
+        } catch (error) {
+            cat.classList.remove("!text-red-navigation", "!font-medium");
+        }
+    });
+};
 
+let cleanAll = () => {
+    console.log("voy a cerrar el menu");
+    let arrays = [categories, breadcrumbs, itemMenu];
+    arrays.forEach((array) => {
+        cleaning(array);
+    });
+    console.log("Cerrado");
+
+};
+
+try {
     categories.forEach((cat, i) => {
         let title = cat.querySelector("h3");
         let bread = breadcrumbs[i];
@@ -64,8 +90,11 @@ try {
                     .querySelector(".catIcon")
                     .setAttribute("src", urls[i][1]);
             }
-            cambioPos(cat,i);
+            cambioPos(cat, i);
             toogleDishes(cat.nextElementSibling);
+            moveBread(bread, i);
+            console.log(iconCloseMenu);
+            closeMenuController(iconCloseMenu, iconOpenMenu);
 
         });
 
@@ -85,6 +114,10 @@ try {
                     .querySelector(".catIcon")
                     .setAttribute("src", urls[i][1]);
             }
+            cambioPos(cat, i);
+            toogleDishes(cat.nextElementSibling);
+            moveBread(bread, i);
+
         });
 
         bread.addEventListener("click", () => {
@@ -103,8 +136,13 @@ try {
                     .querySelector(".catIcon")
                     .setAttribute("src", urls[i][1]);
             }
+            cambioPos(cat, i);
+            toogleDishes(cat.nextElementSibling);
+            moveBread(bread, i);
         });
     });
 } catch (err) {
     console.log(err);
 }
+
+export { cleanAll, closeMenuController };
