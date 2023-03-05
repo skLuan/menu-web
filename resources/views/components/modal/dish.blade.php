@@ -7,7 +7,7 @@
                 $url = $placeholder;
             }
         @endphp
-        <img class="rounded-md my-auto" src="{{ $url }}" alt="">
+        <img class="rounded-md my-auto lazyload" data-src="{{ $url }}" alt="">
     </picture>
     <div>
         {{-- Colection --}}

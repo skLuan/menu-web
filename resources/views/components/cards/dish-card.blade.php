@@ -7,7 +7,7 @@
                 $url = $placeholder;
             }
         @endphp
-        <img class="rounded-md" src="{{$url}}" alt="">
+        <img class="lazyload rounded-md" data-src="{{$url}}" alt="">
     </picture>
     <h3 class="touch text-white font-bold text-lg leading-tight pl-1 pt-3">
         {{ $dish->name }}

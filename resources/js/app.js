@@ -2,7 +2,8 @@ import "./bootstrap";
 import Alpine from "alpinejs";
 import.meta.glob(["../img/**"]);
 import "iconify-icon";
-import "./swipers"
+import "lazysizes";
+import "./swipers";
 import { controllerCategory } from "./selectCat";
 import tabBar from "./tabBar";
 import dishModal from "./dishModal";
