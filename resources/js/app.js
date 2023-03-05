@@ -13,9 +13,7 @@ Alpine.start();
 try {
     dishModal();
 } catch (error) {}
-
-if(window.location.pathname === '/menu' || window.location.pathname === '/menuClean') {
-    console.log('/sisas');
+if(window.location.pathname.includes('menu') || window.location.pathname === '/menuClean') {
     controllerCategory();
 }
 

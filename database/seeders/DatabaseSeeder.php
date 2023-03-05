@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             categories::class,
             multimedia_seeder::class,
             Food_preparations_seeder::class,
+            preparationsTranslations::class,
         ]);
         // \App\Models\User::factory(10)->create();
 
