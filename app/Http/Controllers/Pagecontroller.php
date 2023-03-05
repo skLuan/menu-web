@@ -28,7 +28,9 @@ class Pagecontroller extends Controller
         return view('home');
     }
 
-    public function reserves(){
+    public function reserve($locale = null){
+        if (is_null($locale)) $locale = 'en';
+        App::setlocale($locale);
         return view('reserves');
 
     }

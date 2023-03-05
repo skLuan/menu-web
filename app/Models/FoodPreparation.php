@@ -28,7 +28,7 @@ class FoodPreparation extends Model implements TranslatableContract
 
     public function multimedia(): BelongsToMany
     {
-        return $this->belongsToMany(Multimedia_url::class);
+        return $this->belongsToMany(Multimedia_url::class, 'food_preparations_multimedia_urls');
     }
     public function tags(): BelongsToMany
     {

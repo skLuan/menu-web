@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
 
 Route::controller(Pagecontroller::class)->group(function () {
 
+    Route::get('reserve', 'reserve')->name('reserve');
     Route::get('menu/{locale}', 'menu')->name('menu');
     Route::get('menu', 'menu');
 
@@ -35,6 +36,5 @@ Route::controller(Pagecontroller::class)->group(function () {
 
     Route::get('/{locale}', 'home')->name('home');
     Route::get('/', 'home');
-    Route::get('reserves', 'reserves')->name('reserves');
 });
 require __DIR__.'/auth.php';

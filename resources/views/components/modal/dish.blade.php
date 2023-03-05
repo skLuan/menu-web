@@ -1,9 +1,8 @@
 <article id="" class="modalDish absolute hidden flex-col w-[92vw] left-0 top-0 mx-[15px] rounded-lg mt-5 z-30">
     <picture class="bg-white-true flex w-full h-[278px] rounded-t-lg">
         @php
-            $url = "/image/preparations/$dish->id.png";
+            $url = $dish->multimedia()->pluck('url')->first();
             $placeholder = '/image/preparations/placeholder.png';
-
             if (!file_exists(public_path($url))) {
                 $url = $placeholder;
             }

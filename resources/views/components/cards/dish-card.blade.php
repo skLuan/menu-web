@@ -1,9 +1,8 @@
 <div class="dishCard pl-5 pr-[15px] pt-[15px]">
     <picture class="touch w-full max-h-[120px] bg-gray rounded-md">
         @php
-            $url = "/image/preparations/$dish->id.png";
+            $url = $dish->multimedia()->pluck('url')->first();
             $placeholder = '/image/preparations/placeholder.png';
-
             if (!file_exists(public_path($url))) {
                 $url = $placeholder;
             }

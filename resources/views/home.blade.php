@@ -18,7 +18,7 @@
     </div>
 
     <div class="w-full flex justify-evenly items-center mt-9">
-        <a href="/reservas" class="text-white underline">{{__('general.goReserve')}}</a>
+        <a href="/reserve" class="text-white underline">{{__('general.goReserve')}}</a>
         <a href="/menu" class="block bg-red-navigation text-white font-medium px-3 py-1" type="button">{{__('general.gomenu')}}</a>
     </div>
 

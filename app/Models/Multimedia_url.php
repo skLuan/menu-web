@@ -14,7 +14,7 @@ class Multimedia_url extends Model
 
     public function fPreparations(): BelongsToMany
     {
-        return $this->belongsToMany(FoodPreparation::class);
+        return $this->belongsToMany(FoodPreparation::class, 'food_preparations_multimedia_urls');
     }
 
     public function category(): BelongsToMany
