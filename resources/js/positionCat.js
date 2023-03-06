@@ -6,17 +6,19 @@ let cambioPos = (cat, i) => {
         let categories = document
             .getElementById("titles")
             .querySelectorAll(".cat");
-        let catContainer = document
-            .getElementById("titles")
-            .querySelector(".catContainer");
+        let dishesContainer = document
+            .querySelector(".catContainer")
+            .querySelectorAll(".dishesContainer");
 
-        let currentLocation = title.scrollTop;
-        let yReference = 139;
-
-        let diff = 73 * i;
-        swiperMenu.slideTo(i);
+        let diff = 110 * i;
+        console.log();
         setTimeout(() => {
-            title.scrollTop = currentLocation + diff;
+            let currentLocation = title.scrollTop;
+            let pos = dishesContainer[i].offsetHeight;
+            let yReference = currentLocation - pos;
+
+            title.scrollTop = diff;
+            // title.scrollTop = yReference - diff;
         }, 30);
         // console.log(yReference);
     } catch (err) {

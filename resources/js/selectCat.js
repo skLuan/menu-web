@@ -1,8 +1,9 @@
 import plateActive from "../img/icons/iconPlateActive.svg";
+import plate from "../img/icons/iconPlate.svg";
 import iconOpenMenu from "../img/icons/menu-open.svg";
 
-import plate from "../img/icons/iconPlate.svg";
 import { cambioPos, moveBread } from "./positionCat";
+import { breadcrumbMenu, swiperMenu } from "./swipers";
 
 let urls;
 fetch("/api/catActiveImage")
@@ -17,6 +18,7 @@ fetch("/api/catActiveImage")
 let categories = undefined;
 let breadcrumbs = undefined;
 let itemMenu = undefined;
+let compileControllers = [];
 let iconCloseMenu = document.getElementById("icon-close-menu");
 
 const toogleDishes = (container) => {
@@ -31,9 +33,9 @@ let cleaning = (array) => {
     //---------------Metodo que remueve clases
     array.forEach((cat, i) => {
         try {
-            let title = cat.querySelector("h3");
-            title.classList.remove("!text-red-navigation");
             let menuItem = itemMenu[i];
+            let title = categories[i].querySelector("h3");
+            title.classList.remove("!text-red-navigation");
             menuItem.querySelector(".plateIcon").setAttribute("src", plate);
 
             if (
@@ -48,26 +50,22 @@ let cleaning = (array) => {
                     .querySelector(".catIcon")
                     .setAttribute("src", urls[i][0]);
             }
+            breadcrumbs[i].classList.remove("!text-red-navigation", "!font-medium");
         } catch (error) {
-            cat.classList.remove("!text-red-navigation", "!font-medium");
         }
     });
 };
 
 let cleanAll = () => {
-    categories = document.getElementById("titles").querySelectorAll(".cat");
-    breadcrumbs = document
-        .getElementById("breadcrumb-menu")
-        .querySelectorAll(".cat");
-    itemMenu = document.getElementById("swiper-menu").querySelectorAll(".cat");
+    selectWrappers();
     console.log("voy a cerrar el menu");
-    let arrays = [categories, breadcrumbs, itemMenu];
-    arrays.forEach((array) => {
+    compileControllers.forEach((array) => {
         cleaning(array);
     });
     console.log("Cerrado");
 };
-let controllerCategory = () => {
+
+let selectWrappers = () => {
     try {
         categories = document.getElementById("titles").querySelectorAll(".cat");
         breadcrumbs = document
@@ -76,74 +74,66 @@ let controllerCategory = () => {
         itemMenu = document
             .getElementById("swiper-menu")
             .querySelectorAll(".cat");
-        categories.forEach((cat, i) => {
-            let title = cat.querySelector("h3");
-            let bread = breadcrumbs[i];
-            let menuItem = itemMenu[i];
+        compileControllers = [categories, breadcrumbs, itemMenu];
+    } catch (error) {
+        console.log("Mala seleccion compita D:");
+        console.log(error);
+    }
+};
 
-            cat.addEventListener("click", () => {
-                cleaning(categories);
-                cleaning(breadcrumbs);
+let controllerCategory = () => {
+    selectWrappers();
 
-                menuItem
-                    .querySelector(".plateIcon")
-                    .setAttribute("src", plateActive);
-                title.classList.add("!text-red-navigation");
-                bread.classList.add("!text-red-navigation", "!font-medium");
+    try {
+        let anterior = undefined;
+        compileControllers.forEach((compile) => {
+            compile.forEach((cat, i) => {
+                let title = categories[i].querySelector("h3");
+                let uniqueCat = itemMenu[i];
 
-                // console.log(cat.querySelector("h3").classList);
-                if (urls != undefined || urls != null) {
-                    menuItem
-                        .querySelector(".catIcon")
-                        .setAttribute("src", urls[i][1]);
-                }
-                cambioPos(cat, i);
-                toogleDishes(cat.nextElementSibling);
-                moveBread(bread, i);
-                console.log(iconCloseMenu);
-                closeMenuController(iconCloseMenu, iconOpenMenu);
-            });
+                cat.addEventListener("mousedown", (e) => {
+                    cleaning(categories);
+                    cleaning(breadcrumbs);
+                });
 
-            menuItem.addEventListener("click", () => {
-                cleaning(categories);
-                cleaning(breadcrumbs);
-                menuItem
-                    .querySelector(".plateIcon")
-                    .setAttribute("src", plateActive);
+                cat.addEventListener("mouseup", () => {
+                    swiperMenu.slideTo(i);
 
-                title.classList.add("!text-red-navigation");
-                bread.classList.add("!text-red-navigation", "!font-medium");
+                    if (uniqueCat === anterior) {
+                        anterior = undefined;
+                        return;
+                    }
+                    // console.log(swiperMenu.activeIndex);
+                    if (uniqueCat.querySelector(".plateIcon") !== null) {
+                        uniqueCat
+                            .querySelector(".plateIcon")
+                            .setAttribute("src", plateActive);
+                    }
 
-                // console.log(cat.querySelector("h3").classList);
-                if (urls != undefined || urls != null) {
-                    menuItem
-                        .querySelector(".catIcon")
-                        .setAttribute("src", urls[i][1]);
-                }
-                cambioPos(cat, i);
-                toogleDishes(cat.nextElementSibling);
-                moveBread(bread, i);
-            });
+                    if (title !== null)
+                        title.classList.add("!text-red-navigation");
 
-            bread.addEventListener("click", () => {
-                cleaning(categories);
-                cleaning(breadcrumbs);
-                menuItem
-                    .querySelector(".plateIcon")
-                    .setAttribute("src", plateActive);
+                    if (urls != undefined || urls != null) {
+                        if (uniqueCat.querySelector(".catIcon") !== null) {
+                            uniqueCat
+                                .querySelector(".catIcon")
+                                .setAttribute("src", urls[i][1]);
+                        }
+                    }
+                    breadcrumbs[i].classList.add(
+                        "!text-red-navigation",
+                        "!font-medium"
+                    );
+                    cambioPos(cat, i);
+                    if (cat.parentNode.classList.contains("catContainer")) {
+                        toogleDishes(cat.nextElementSibling);
+                    } else {
+                        toogleDishes(categories[i].nextElementSibling);
+                    }
 
-                title.classList.add("!text-red-navigation");
-                bread.classList.add("!text-red-navigation", "!font-medium");
-
-                // console.log(cat.querySelector("h3").classList);
-                if (urls != undefined || urls != null) {
-                    menuItem
-                        .querySelector(".catIcon")
-                        .setAttribute("src", urls[i][1]);
-                }
-                cambioPos(cat, i);
-                toogleDishes(cat.nextElementSibling);
-                moveBread(bread, i);
+                    closeMenuController(iconCloseMenu, iconOpenMenu);
+                    anterior = uniqueCat;
+                });
             });
         });
     } catch (err) {

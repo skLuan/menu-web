@@ -19,7 +19,7 @@
             break;
     }
 @endphp
-<div class="w-auto my-auto">
+<div {{ $attributes->merge(['class' => 'w-auto my-auto'])}}>
     <p class="text-gray text-sm font-light">
     <a class="{{$en}} " href="/menu/en">En</a>
     <a class="{{$es}} px-2" href="/menu/es">Es</a>

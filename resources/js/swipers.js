@@ -3,18 +3,20 @@ import "swiper/css/bundle";
 
 var breadcrumbMenu = new Swiper("#breadcrumb-menu", {
     slidesPerView: 4,
-    spaceBetween: 30,
     scrollbar: false,
+    loop: true,
 });
-
 var swiperMenu = new Swiper("#swiper-menu", {
     direction: "vertical",
-    slidesPerView: 6,
-    spaceBetween: 30,
+    autoHeight: true,
+    height: 55,
+    spaceBetween: 20,
     thumbs: {
         swiper: breadcrumbMenu,
+        multipleActiveThumbs: false,
     },
 });
+
 
 var swiperHome = new Swiper(".swiper-home", {
     autoplay: {
