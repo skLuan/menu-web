@@ -4,7 +4,6 @@ import "swiper/css/bundle";
 var breadcrumbMenu = new Swiper("#breadcrumb-menu", {
     slidesPerView: 4,
     scrollbar: false,
-    loop: true,
 });
 var swiperMenu = new Swiper("#swiper-menu", {
     direction: "vertical",

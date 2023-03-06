@@ -50,9 +50,11 @@ let cleaning = (array) => {
                     .querySelector(".catIcon")
                     .setAttribute("src", urls[i][0]);
             }
-            breadcrumbs[i].classList.remove("!text-red-navigation", "!font-medium");
-        } catch (error) {
-        }
+            breadcrumbs[i].classList.remove(
+                "!text-red-navigation",
+                "!font-medium"
+            );
+        } catch (error) {}
     });
 };
 
@@ -71,9 +73,10 @@ let selectWrappers = () => {
         breadcrumbs = document
             .getElementById("breadcrumb-menu")
             .querySelectorAll(".cat");
-        itemMenu = document
-            .getElementById("swiper-menu")
-            .querySelectorAll(".cat");
+        // itemMenu = document
+        //     .getElementById("swiper-menu")
+        //     .querySelectorAll(".cat");
+        itemMenu = swiperMenu.slides;
         compileControllers = [categories, breadcrumbs, itemMenu];
     } catch (error) {
         console.log("Mala seleccion compita D:");
@@ -83,9 +86,48 @@ let selectWrappers = () => {
 
 let controllerCategory = () => {
     selectWrappers();
+    let anterior = undefined;
 
     try {
-        let anterior = undefined;
+        swiperMenu.on("click", () => {
+            cleaning(categories);
+            cleaning(breadcrumbs);
+            swiperMenu.slideTo(swiperMenu.clickedIndex);
+
+            let i = swiperMenu.activeIndex;
+            let selector = swiperMenu.clickedSlide.firstElementChild;
+            let uniqueCat = selector;
+            let title = categories[i].querySelector("h3");
+            // console.log(itemMenu);
+            // console.log(swiperMenu.activeIndex);
+            if (uniqueCat.querySelector(".plateIcon") !== null) {
+                uniqueCat
+                    .querySelector(".plateIcon")
+                    .setAttribute("src", plateActive);
+            }
+
+            if (title !== null) title.classList.add("!text-red-navigation");
+
+            if (urls != undefined || urls != null) {
+                if (uniqueCat.querySelector(".catIcon") !== null) {
+                    uniqueCat
+                        .querySelector(".catIcon")
+                        .setAttribute("src", urls[i][1]);
+                }
+            }
+            breadcrumbs[i].classList.add(
+                "!text-red-navigation",
+                "!font-medium"
+            );
+            cambioPos(categories[i], i);
+            if (categories[i].parentNode.classList.contains("catContainer")) {
+                toogleDishes(categories[i].nextElementSibling);
+            } else {
+                toogleDishes(categories[i].nextElementSibling);
+            }
+
+            closeMenuController(iconCloseMenu, iconOpenMenu);
+        });
         compileControllers.forEach((compile) => {
             compile.forEach((cat, i) => {
                 let title = categories[i].querySelector("h3");
@@ -97,11 +139,11 @@ let controllerCategory = () => {
                 });
 
                 cat.addEventListener("mouseup", () => {
+                    console.log(cat);
                     swiperMenu.slideTo(i);
-
                     if (uniqueCat === anterior) {
                         anterior = undefined;
-                        return;
+                        // return;
                     }
                     // console.log(swiperMenu.activeIndex);
                     if (uniqueCat.querySelector(".plateIcon") !== null) {

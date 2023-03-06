@@ -4,7 +4,7 @@
         <div class="swiper-wrapper">
             @foreach ($categories as $cat)
                 <div class="swiper-slide !flex">
-                    <div id="" class="cat cat-{{ $cat->id }} relative w-11 m    -auto">
+                    <div id="" class="cat cat-{{ $cat->id }} relative w-11 m-auto">
                         <picture class="absolute left-0 -top-1">
                             <img class="plateIcon opacity-40" src="{{ Vite::asset('resources/img/icons/iconPlate.svg') }}"
                                 alt="icon">
