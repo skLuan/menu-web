@@ -1,10 +1,10 @@
 <div
     {{ $attributes->merge(['class' => 'fixed h-[76vh] border-l border-red-navigation border-opacity-20 bg-black-true w-[76px] px-4 flex flex-col right-0 py-5 overflow-x-hidden z-10']) }}>
-    <div id="swiper-menu" class="">
+    <div id="swiper-menu" class="!h-full">
         <div class="swiper-wrapper">
             @foreach ($categories as $cat)
                 <div class="swiper-slide !flex">
-                    <div id="" class="cat cat-{{ $cat->id }} relative w-11 m-auto">
+                    <div id="" class="cat cat-{{ $cat->id }} relative w-11 m    -auto">
                         <picture class="absolute left-0 -top-1">
                             <img class="plateIcon opacity-40" src="{{ Vite::asset('resources/img/icons/iconPlate.svg') }}"
                                 alt="icon">
