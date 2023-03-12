@@ -89,17 +89,21 @@ let controllerCategory = () => {
     let anterior = undefined;
 
     try {
-        swiperMenu.on("click", () => {
+        let forSwipers = (swiper) => {
             cleaning(categories);
             cleaning(breadcrumbs);
-            swiperMenu.slideTo(swiperMenu.clickedIndex);
+            swiper.slideTo(swiper.clickedIndex);
 
-            let i = swiperMenu.activeIndex;
-            let selector = swiperMenu.clickedSlide.firstElementChild;
+            let i = swiper.clickedIndex;
+            let selector = swiperMenu.slides[i].firstElementChild;
             let uniqueCat = selector;
             let title = categories[i].querySelector("h3");
             // console.log(itemMenu);
-            // console.log(swiperMenu.activeIndex);
+            console.log(i);
+            if (uniqueCat === anterior) {
+                anterior = undefined;
+                return;
+            }
             if (uniqueCat.querySelector(".plateIcon") !== null) {
                 uniqueCat
                     .querySelector(".plateIcon")
@@ -127,7 +131,17 @@ let controllerCategory = () => {
             }
 
             closeMenuController(iconCloseMenu, iconOpenMenu);
+            anterior = uniqueCat;
+        };
+        swiperMenu.on("click", () => {
+            forSwipers(swiperMenu);
+            // forSwipers(swiperMenu.thumbs.swiper);
         });
+
+        breadcrumbMenu.on("click", () => {
+            forSwipers(breadcrumbMenu);
+        });
+
         compileControllers.forEach((compile) => {
             compile.forEach((cat, i) => {
                 let title = categories[i].querySelector("h3");
@@ -143,7 +157,7 @@ let controllerCategory = () => {
                     swiperMenu.slideTo(i);
                     if (uniqueCat === anterior) {
                         anterior = undefined;
-                        // return;
+                        return;
                     }
                     // console.log(swiperMenu.activeIndex);
                     if (uniqueCat.querySelector(".plateIcon") !== null) {

@@ -27,7 +27,6 @@ var swiperHome = new Swiper(".swiper-home", {
 });
 
 var swiperHome2 = new Swiper(".swiper-restaurante", {
-    slidesPerView: 2,
     autoplay: {
         delay: 3000,
     },

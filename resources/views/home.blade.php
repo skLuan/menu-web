@@ -3,15 +3,15 @@
     <div class="relative w-full h-[40vh]">
         <div class="swiper swiper-home w-full h-full">
             <div class="swiper-wrapper">
-                <div class="swiper-slide text-center text-base bg-white flex justify-center items-center">Slide 1</div>
-                <div class="swiper-slide text-center text-base bg-white flex justify-center items-center">Slide 2</div>
-                <div class="swiper-slide text-center text-base bg-white flex justify-center items-center">Slide 3</div>
-                <div class="swiper-slide text-center text-base bg-white flex justify-center items-center">Slide 4</div>
-                <div class="swiper-slide text-center text-base bg-white flex justify-center items-center">Slide 5</div>
-                <div class="swiper-slide text-center text-base bg-white flex justify-center items-center">Slide 6</div>
-                <div class="swiper-slide text-center text-base bg-white flex justify-center items-center">Slide 7</div>
-                <div class="swiper-slide text-center text-base bg-white flex justify-center items-center">Slide 8</div>
-                <div class="swiper-slide text-center text-base bg-white flex justify-center items-center">Slide 9</div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 1</div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 2</div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 3</div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 4</div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 5</div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 6</div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 7</div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 8</div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 9</div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -36,7 +36,9 @@
     </div>
 
     <p class="text-right py-10">
-        <img class="inline" src="{{ Vite::asset('resources/img/img-detalle.png') }}" alt="detalle tradición">
+        <picture>
+            <img class="inline  w-1/2" src="{{ Vite::asset('resources/img/tradition.jpg') }}" alt="detalle tradición">
+        </picture>
     </p>
 
     <div class="container mx-auto px-5 mt-12 text-white">
@@ -49,22 +51,36 @@
     </div>
 
     <p class="text-left py-10">
-        <img class="inline" src="{{ Vite::asset('resources/img/img-detalle.png') }}" alt="detalle tradición">
+        <img class="inline" src="{{ Vite::asset('resources/img/minipaella2.jpg') }}" alt="detalle tradición">
     </p>
 
-    <div class="container mx-auto px-5 mt-12 ">
+    <div class="container mx-auto mt-12 ">
         <div class="grid grid-flow-row mt-6">
             <h6 class="text-center mb-4">{{ __('home.titleTheRestaurant') }}</h6>
         </div>
         <!-- Swiper -->
-        <div class="relative w-full h-[40vh]">
+        <div class="relative w-full">
             <div class="swiper swiper-restaurante w-full h-full">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide text-center text-base bg-white flex justify-center items-center">Slide 1
+                    <div class="swiper-slide text-center text-base flex justify-center items-center">
+                        <picture>
+                            <img class="lazyload" data-src="{{Vite::asset('resources/img/restaurante/res1.jpg')}}" alt="">
+                        </picture>
                     </div>
-                    <div class="swiper-slide text-center text-base bg-white flex justify-center items-center">Slide 2
+                    <div class="swiper-slide text-center text-base flex justify-center items-center">
+                        <picture>
+                            <img class="lazyload" data-src="{{Vite::asset('resources/img/restaurante/res2.jpg')}}" src="" alt="">
+                        </picture>
                     </div>
-                    <div class="swiper-slide text-center text-base bg-white flex justify-center items-center">Slide 3
+                    <div class="swiper-slide text-center text-base flex justify-center items-center">
+                        <picture>
+                            <img class="lazyload" data-src="{{Vite::asset('resources/img/restaurante/res3.jpg')}}" src="" alt="">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide text-center text-base flex justify-center items-center">
+                        <picture>
+                            <img class="lazyload" data-src="{{Vite::asset('resources/img/restaurante/res4.jpg')}}" src="" alt="">
+                        </picture>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -83,7 +99,9 @@
     </div>
 
     <p class="text-right py-2">
-        <img class="inline" src="{{ Vite::asset('resources/img/img-detalle.png') }}" alt="detalle tradición">
+        <picture>
+            <img class="inline w-1/2" src="{{ Vite::asset('resources/img/near.jpg') }}" alt="detalle tradición">
+        </picture>
     </p>
 
     <div class="container mx-auto px-5 mt-12 text-white">
@@ -92,17 +110,17 @@
         </div>
     </div>
 
-    <p class="text-left py-1">
-        <img class="inline" src="{{ Vite::asset('resources/img/img-detalle.png') }}" alt="detalle tradición">
-    </p>
 
     <div class="container mx-auto px-5">
         <p>
             {{ __('home.piChurch') }}
         </p>
     </div>
+    <p class="text-left py-1">
+        <img class="inline" src="{{ Vite::asset('resources/img/pi.jpg') }}" alt="detalle tradición">
+    </p>
 
-    <div class="container mx-auto px-5 mt-12 ">
+    <div class="container mx-auto px-5">
         <div class="grid grid-flow-row mt-6">
             <h6 class="text-center mb-4">Encuentrános</h6>
         </div>
