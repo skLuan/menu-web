@@ -3,7 +3,7 @@
     <div class="text-gray text-[22px] font-medium flex flex-col my-auto">
         <a class="py-2" href="/">Restaurante</a>
         <a class="py-2" href="/reservas">Reservas</a>
-        <a class="py-2" href="/menu">Carta</a>
+        <a class="py-2" href="/menu">Menu</a>
     </div>
     {{-- @if ($routeName === 'home')
     @endif --}}

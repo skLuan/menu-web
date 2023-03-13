@@ -36,5 +36,7 @@ Route::controller(Pagecontroller::class)->group(function () {
 
     Route::get('/{locale}', 'home')->name('home');
     Route::get('/', 'home');
+    Route::post('/make-reserve', [PageController::class, 'makeReserve'])->name('make-reserve');
+
 });
 require __DIR__.'/auth.php';

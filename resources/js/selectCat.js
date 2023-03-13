@@ -6,6 +6,8 @@ import { cambioPos, moveBread } from "./positionCat";
 import { breadcrumbMenu, swiperMenu } from "./swipers";
 
 let urls;
+if(window.location.pathname.includes('menu') || window.location.pathname === '/menuClean') {
+
 fetch("/api/catActiveImage")
     .then((response) => {
         return response.json();
@@ -13,7 +15,7 @@ fetch("/api/catActiveImage")
     .then((data) => {
         urls = data;
     });
-
+}
 // ---------------- Categories selector
 let categories = undefined;
 let breadcrumbs = undefined;
