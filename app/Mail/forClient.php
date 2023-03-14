@@ -9,12 +9,11 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class forMeson extends Mailable
+class forClient extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $name;
-    public $email;
     public $numero_personas;
     public $fecha;
     public $hora;
@@ -23,10 +22,9 @@ class forMeson extends Mailable
      *
      * @return void
      */
-    public function __construct($name, $email, $numero_personas, $fecha, $hora)
+    public function __construct($name, $numero_personas, $fecha, $hora)
     {
         $this->name = $name;
-        $this->email = $email;
         $this->numero_personas = $numero_personas;
         $this->fecha = $fecha;
         $this->hora = $hora;
@@ -40,7 +38,7 @@ class forMeson extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: "$this->name esta reservando",
+            subject: 'Nueva reserva',
         );
     }
 
@@ -52,7 +50,7 @@ class forMeson extends Mailable
     public function content()
     {
         return new Content(
-            view: 'components.mails.new-reserve-restaurant',
+            view: 'components.mails.for-client',
         );
     }
 

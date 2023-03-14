@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\forMeson;
+use App\Mail\forClient;
 use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -51,6 +52,7 @@ class Pagecontroller extends Controller
         $fecha = $request->input('fecha');
         $hora = $request->input('hora');
         Mail::to('erazo.luan@gmail.com')->send(new forMeson($name, $email, $numero_personas, $fecha, $hora));
+        Mail::to($email)->send(new forClient($name, $numero_personas, $fecha, $hora));
         return redirect()->back()->with('success', 'correo enviado satisfactoriamente');
     }
 }

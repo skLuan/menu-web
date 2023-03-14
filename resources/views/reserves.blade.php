@@ -1,7 +1,7 @@
 <x-layouts.general>
     @php
-        // $success = session('success');
-        $success = true;
+        $success = session('success');
+        // $success = true;
     @endphp
     <div class="container mx-auto py-4 pb-16">
         <div class="grid grid-cols-5 px-5 gap-4">
@@ -32,8 +32,9 @@
                     reserva.
                     <br>
                     <br>
-                    Por favor, revisa tu bandeja de entrada (y también la carpeta de spam, por si acaso)
+                    Por favor, revisa tu bandeja de entrada y también la carpeta de spam por si acaso,
                     para confirmar que has recibido nuestro mensaje.
+                    <br>
                     <br>
                     Te mantendremos informado sobre el estado de tu
                     reserva.
