@@ -17,9 +17,9 @@
         </div>
     </div>
 
-    <div class="w-full flex justify-evenly mt-9">
-        <a href="/reservas" class="text-white underline">Reservas</a>
-        <button class="btn btn-outline-primary" type="button">Ir a la carta</button>
+    <div class="w-full flex justify-evenly items-center mt-9">
+        <a href="/reservas" class="text-white underline">{{__('general.goReserve')}}</a>
+        <a href="/menu" class="block bg-red-navigation text-white font-medium px-3 py-1" type="button">{{__('general.gomenu')}}</a>
     </div>
 
     <div class="container mx-auto px-5 mt-12 text-white">
@@ -27,12 +27,9 @@
                 alt="Meson jesus"></p>
         <p class="text-center">EST. 1972</p>
         <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">Años de tradición</h6>
+            <h6 class="text-center mb-4">{{__('home.titleTradition')}}</h6>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ullamcorper ipsum. Suspendisse
-                commodo volutpat placerat. Donec mauris erat, cursus at pulvinar non, laoreet eget mauris. Suspendisse
-                luctus condimentum libero, a egestas neque imperdiet pulvinar. Fusce vitae consequat lacus, id bibendum
-                orci.
+                {{__('home.tradition')}}
             </p>
         </div>
     </div>
@@ -43,12 +40,9 @@
 
     <div class="container mx-auto px-5 mt-12 text-white">
         <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">Cocina especial</h6>
+            <h6 class="text-center mb-4">{{__('home.titleKitchen')}}</h6>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ullamcorper ipsum. Suspendisse
-                commodo volutpat placerat. Donec mauris erat, cursus at pulvinar non, laoreet eget mauris. Suspendisse
-                luctus condimentum libero, a egestas neque imperdiet pulvinar. Fusce vitae consequat lacus, id bibendum
-                orci.
+                {{__('home.kitchen')}}
             </p>
         </div>
     </div>
@@ -59,7 +53,7 @@
 
     <div class="container mx-auto px-5 mt-12 ">
         <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">El restaurante</h6>
+            <h6 class="text-center mb-4">{{__('home.titleTheRestaurant')}}</h6>
         </div>
         <!-- Swiper -->
         <div class="relative w-full h-[40vh]">
@@ -79,10 +73,10 @@
 
     <div class="container mx-auto px-5 mt-12 text-white">
         <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">Cerca al Mesón</h6>
+            <h6 class="text-center mb-4">{{__('home.titleNear')}}</h6>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ullamcorper ipsum. Suspendisse
-                commodo volutpat placerat.
+                {{__('home.near')}}
+
             </p>
         </div>
     </div>
@@ -93,7 +87,7 @@
 
     <div class="container mx-auto px-5 mt-12 text-white">
         <div class="grid grid-flow-row">
-            <h6 class="text-left">La iglesia de Pi</h6>
+            <h6 class="text-left">{{__('home.titlePi')}}</h6>
         </div>
     </div>
 
@@ -103,8 +97,7 @@
 
     <div class="container mx-auto px-5">
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ullamcorper ipsum. Suspendisse
-            commodo volutpat placerat.
+            {{__('home.piChurch')}}
         </p>
     </div>
 
@@ -114,23 +107,27 @@
         </div>
         <!-- Geolocalizacion -->
         <div class="w-full">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9259870462943!2d-74.08012189517038!3d4.607271938439609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99752f2643dd%3A0x87aec1aa947582fd!2sEl%20Meson%20De%20Jes%C3%BAs!5e0!3m2!1ses!2sco!4v1677189812190!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9259870462943!2d-74.08012189517038!3d4.607271938439609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99752f2643dd%3A0x87aec1aa947582fd!2sEl%20Meson%20De%20Jes%C3%BAs!5e0!3m2!1ses!2sco!4v1677189812190!5m2!1ses!2sco"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="w-full grid justify-items-end mt-4">
-            <a class="color-primary font-semibold underline" href="https://goo.gl/maps/Lx5DS26yr8GtQ4DKA" target="_blank" >Ir a maps</a>
+            <a class="color-primary font-semibold underline" href="https://goo.gl/maps/Lx5DS26yr8GtQ4DKA"
+                target="_blank">Ir a maps</a>
         </div>
     </div>
 
     <div class="container mx-auto px-5 mt-12">
         <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">Horario de atención</h6>
+            <h6 class="text-center mb-4">{{__('home.titleOpening')}}</h6>
             <div class="grid justify-items-center">
                 <p class="w-4/5 flex justify-between">
-                    <span>Lun a vier</span>
+                    <span>{{__('home.week')}}</span>
                     <span class="text-white">00:00 - 23:00</span>
                 </p>
                 <p class="w-4/5 flex justify-between">
-                    <span>Sab y dom</span>
+                    <span>{{__('home.weekend')}}</span>
                     <span class="text-white">00:00 - 23:00</span>
                 </p>
             </div>
@@ -139,17 +136,18 @@
 
     <div class="w-full flex flex-col items-center mt-9">
         <div class="mb-5">
-            <button class="btn btn-outline-primary" type="button">Reservar</button>
+            <a href="/reservas" class="block bg-red-navigation text-white font-medium px-3 py-1"
+                type="button">{{__('general.goReserve')}}</a>
         </div>
         <div class="mb-5">
-            <a href="/reservas" class="text-white underline">Ver la carta</a>
+            <a href="/menu" class="text-white underline">{{__('general.gomenu')}}</a>
         </div>
     </div>
 
     <div class="w-full flex flex-col items-center mt-9">
         <div class="grid grid-flow-row mt-6">
             <div class="grid justify-items-center">
-                <p>Siguénos:</p>
+                <p>{{__('home.titleFollow')}}</p>
                 <div>
                     <a href="#" class="text-gray hover:text-white mr-5">
                         <i class="fa-brands fa-facebook fa-3x"></i>
@@ -161,6 +159,5 @@
             </div>
         </div>
     </div>
-
-
+    <x-nav.tab-bar></x-nav.tab-bar>
 </x-layouts.general>

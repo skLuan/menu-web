@@ -3,9 +3,11 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use Mockery\Undefined;
 
 class header extends Component
 {
+    public $locale;
     /**
      * Create a new component instance.
      *
@@ -13,7 +15,6 @@ class header extends Component
      */
     public function __construct()
     {
-        //
     }
 
     /**
