@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="flex flex-col items-left px-6  bg-black">
-        <p><a href="/reserva">Reservas</a></p>
+        <p><a href="/reserve">Reservas</a></p>
         <p><a href="">Carta</a></p>
     </div>
     <div class="w-full p-4">
