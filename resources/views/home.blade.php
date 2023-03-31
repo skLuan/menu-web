@@ -39,32 +39,46 @@
         <p class="text-center"><img class="inline h-[98px]" src="{{ Vite::asset('resources/img/icons/logo.svg') }}"
                 alt="Meson jesus"></p>
         <p class="text-center">EST. 1972</p>
-        <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">{{ __('home.titleTradition') }}</h6>
+        <h6 class="text-center mb-4">{{ __('home.titleTradition') }}</h6>
+
+    </div>
+
+    <div class="grid grid-cols-2 gap-2 mt-6 px-5">
+        <div class="pr-2">
             <p>
                 {{ __('home.tradition') }}
             </p>
         </div>
-    </div>
-
-    <p class="text-right py-10">
-        <picture>
-            <img class="inline  w-1/2" src="{{ Vite::asset('resources/img/tradition.jpg') }}" alt="detalle tradición">
-        </picture>
-    </p>
-
-    <div class="container mx-auto px-5 mt-12 text-white">
-        <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">{{ __('home.titleKitchen') }}</h6>
-            <p>
-                {{ __('home.kitchen') }}
+        <div>
+            <p class="text-right">
+                <picture>
+                    <img class="inline  w-7/8" src="{{ Vite::asset('resources/img/tradition.jpg') }}" alt="detalle tradición">
+                </picture>
             </p>
         </div>
     </div>
 
-    <p class="text-left py-10">
-        <img class="inline" src="{{ Vite::asset('resources/img/minipaella2.jpg') }}" alt="detalle tradición">
-    </p>
+
+
+    <div class="container mx-auto px-5 mt-12 text-white">
+        <div class="grid grid-flow-row mt-6">
+            <h6 class="text-center mb-4">{{ __('home.titleKitchen') }}</h6>
+            <p class="text-left pt-2">
+                <img class="inline" src="{{ Vite::asset('resources/img/minipaella2.jpg') }}" alt="detalle tradición">
+            </p>
+            <p>
+                {{ __('home.kitchen') }}
+            </p>
+            <div class="w-full flex flex-col items-center mt-4">
+                <div class="mb-5">
+                    <a href="/reserve" class="block bg-red-navigation text-white font-medium px-3 py-1"
+                        type="button">{{ __('general.goReserve') }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <div class="container mx-auto mt-12 ">
         <div class="grid grid-flow-row mt-6">
@@ -103,18 +117,25 @@
     <div class="container mx-auto px-5 mt-12 text-white">
         <div class="grid grid-flow-row mt-6">
             <h6 class="text-center mb-4">{{ __('home.titleNear') }}</h6>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-2 mt-6 px-5">
+        <div class="pr-2">
             <p>
                 {{ __('home.near') }}
 
             </p>
         </div>
+        <div>
+            <p class="text-right">
+                <picture>
+                    <img class="inline w-7/8" src="{{ Vite::asset('resources/img/near.jpg') }}" alt="detalle tradición">
+                </picture>
+            </p>
+        </div>
     </div>
 
-    <p class="text-right py-2">
-        <picture>
-            <img class="inline w-1/2" src="{{ Vite::asset('resources/img/near.jpg') }}" alt="detalle tradición">
-        </picture>
-    </p>
 
     <div class="container mx-auto px-5 mt-12 text-white">
         <div class="grid grid-flow-row">
@@ -167,7 +188,7 @@
 
     <div class="w-full flex flex-col items-center mt-9">
         <div class="mb-5">
-            <a href="/reservas" class="block bg-red-navigation text-white font-medium px-3 py-1"
+            <a href="/reserve" class="block bg-red-navigation text-white font-medium px-3 py-1"
                 type="button">{{ __('general.goReserve') }}</a>
         </div>
         <div class="mb-5">
