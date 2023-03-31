@@ -51,7 +51,7 @@ class Pagecontroller extends Controller
         $numero_personas = $request->input('numero_personas');
         $fecha = $request->input('fecha');
         $hora = $request->input('hora');
-        Mail::to('erazo.luan@gmail.com')->send(new forMeson($name, $email, $numero_personas, $fecha, $hora));
+        Mail::to('restaurantmesonjesus@gmail.com')->send(new forMeson($name, $email, $numero_personas, $fecha, $hora));
         Mail::to($email)->send(new forClient($name, $numero_personas, $fecha, $hora));
         return redirect()->back()->with('success', 'correo enviado satisfactoriamente');
     }

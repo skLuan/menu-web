@@ -129,6 +129,5 @@
 
     </div>
     </div>
-    <x-footer></x-footer>
     <x-nav.tab-bar></x-nav.tab-bar>
 </x-layouts.general>

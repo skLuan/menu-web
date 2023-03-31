@@ -1,17 +1,29 @@
+@php
+    $imgUrl = 'resources/img/principalSlider/'
+@endphp
 <x-layouts.general>
     <!-- Swiper Home -->
-    <div class="relative w-full h-[40vh]">
+    <div class="relative w-full h-[50vh]">
         <div class="swiper swiper-home w-full h-full">
             <div class="swiper-wrapper">
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 1</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 2</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 3</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 4</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 5</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 6</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 7</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 8</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 9</div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">
+                    <picture class="h-full">
+                    <img class="object-cover object-center h-full" src="{{Vite::asset($imgUrl . '1.JPG')}}" alt=""></picture></div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">
+                    <picture class="h-full">
+                    <img class="object-cover object-center h-full" src="{{Vite::asset($imgUrl . '2.JPG')}}" alt=""></picture></div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">
+                    <picture class="h-full">
+                    <img class="object-cover object-center h-full" src="{{Vite::asset($imgUrl . '3.JPG')}}" alt=""></picture></div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">
+                    <picture class="h-full">
+                    <img class="object-cover object-center h-full" src="{{Vite::asset($imgUrl . '4.JPG')}}" alt=""></picture></div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">
+                    <picture class="h-full">
+                    <img class="object-cover object-center h-full" src="{{Vite::asset($imgUrl . '5.JPG')}}" alt=""></picture></div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">
+                    <picture class="h-full">
+                    <img class="object-cover object-center h-full" src="{{Vite::asset($imgUrl . '6.JPG')}}" alt=""></picture></div>
             </div>
             <div class="swiper-pagination"></div>
         </div>

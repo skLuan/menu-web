@@ -36,6 +36,7 @@ Route::controller(Pagecontroller::class)->group(function () {
 
     Route::get('/{locale}', 'home')->name('home');
     Route::get('/', 'home');
+    // ---------------------------- POST
     Route::post('/make-reserve', [PageController::class, 'makeReserve'])->name('make-reserve');
 
 });

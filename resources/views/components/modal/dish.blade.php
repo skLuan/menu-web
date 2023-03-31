@@ -1,5 +1,5 @@
 <article id="" class="modalDish absolute hidden flex-col w-[92vw] left-0 top-0 mx-[15px] rounded-lg mt-5 z-30">
-    <picture class="bg-white-true flex w-full h-[278px] rounded-t-lg">
+    <picture class="bg-black-true flex w-full h-[278px] rounded-t-lg">
         @php
             $url = $dish->multimedia()->pluck('url')->first();
             $placeholder = '/image/preparations/placeholder.png';
@@ -7,7 +7,7 @@
                 $url = $placeholder;
             }
         @endphp
-        <img class="rounded-md my-auto lazyload" data-src="{{ $url }}" alt="">
+        <img class="rounded-md my-auto lazyload" data-src="{{ $url }}" src="low-quality.jpg" alt="">
     </picture>
     <div>
         {{-- Colection --}}

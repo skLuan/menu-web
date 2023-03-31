@@ -15,6 +15,9 @@
 
 <body class="relative antialiased bg-black">
     {{ $slot }}
+    @if (request()->path() !== 'menu')
+    <x-footer></x-footer>
+    @endif
 </body>
 
 </html>
