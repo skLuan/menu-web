@@ -24,7 +24,8 @@
         <div id="" class="catContainer grid grid-cols-5 pb-14">
             @foreach ($categories as $cat)
                 @php
-                    $dishes = $cat->foodPreparations;
+                    $dishes = $cat->foodPreparations->where('category_id', '!=', 1);
+                    $drinks = $cat->foodPreparations->where('category_id', 1);
                     $dishes = $dishes->sortByDesc(function ($dish) {
                         $ImgPath = public_path($dish->multimedia()->value('url'));
                         return file_exists($ImgPath);
@@ -48,9 +49,15 @@
                 </div>
                 <div
                     class="dishesContainer hidden cat-{{ $cat->id }} text-white col-start-1 col-span-4 mb-5 last:mb-10">
-                    @foreach ($dishes as $dish)
-                        <x-cards.dish-card :$dish></x-cards.dish-card>
-                    @endforeach
+                    @if ($cat->id == 1)
+                        <x-cards.drinks :$drinks>
+
+                        </x-cards.drinks>
+                    @else
+                        @foreach ($dishes as $dish)
+                            <x-cards.dish-card :$dish></x-cards.dish-card>
+                        @endforeach
+                    @endif
                 </div>
             @endforeach
         </div>
