@@ -6,6 +6,7 @@ return [
     'titleNear' => 'Cerca al Mesón',
     'titlePi' => 'Iglesia de Pi',
     'titleTheRestaurant' => 'El restaurante',
+    'titleReviews' => 'Clientes satisfechos',
     'titleOpening' => 'Horario de atención',
     'titleFollow' => 'Siguénos',
     'week' => 'Lun - Vie',

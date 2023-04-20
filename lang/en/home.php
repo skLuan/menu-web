@@ -6,6 +6,7 @@ return [
     'titleNear' => 'Near to the Mesón',
     'titlePi' => 'Pi church',
     'titleTheRestaurant' => 'The restaurant',
+    'titleReviews' => 'Reviews',
     'titleOpening' => 'Opening Hours',
     'titleFollow' => 'Follow us',
     'week' => 'Mon - Fri',
