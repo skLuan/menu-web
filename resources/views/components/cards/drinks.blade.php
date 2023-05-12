@@ -21,9 +21,9 @@
     $d = $drinks->where('food_type_id', '0');
 @endphp
 <div class="flex flex-row px-5 justify-around">
-    <h2 class="text-2xl">wine</h2>
-    <picture>
-        <img src="" alt="">
+    <h2 class="text-2xl m-auto">wine</h2>
+    <picture class="w-1/2">
+        <img class="w-full lazyload" data-src="/image/drinks/wine.png" src="low-quality.jpg" alt="wine photo">
     </picture>
 </div>
 <div class="px-5">
