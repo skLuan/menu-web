@@ -35,4 +35,14 @@ var swiperHome2 = new Swiper(".swiper-restaurante", {
     },
 });
 
+var swiperHome3 = new Swiper(".swiper-clientes", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    freeMode: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
+
 export { breadcrumbMenu, swiperMenu}

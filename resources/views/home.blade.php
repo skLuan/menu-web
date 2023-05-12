@@ -114,6 +114,40 @@
         </div>
     </div>
 
+    <div class="container mx-auto mt-12 ">
+        <div class="grid grid-flow-row mt-6">
+            <h6 class="text-center mb-4">{{ __('home.titleReviews') }}</h6>
+        </div>
+        <!-- Swiper -->
+        <div class="relative w-full">
+            <div class="swiper swiper-clientes w-full h-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide text-center text-base flex justify-center items-center">
+                        <picture>
+                            <img class="lazyload" data-src="{{Vite::asset('resources/img/restaurante/res1.jpg')}}" alt="">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide text-center text-base flex justify-center items-center">
+                        <picture>
+                            <img class="lazyload" data-src="{{Vite::asset('resources/img/restaurante/res2.jpg')}}" src="" alt="">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide text-center text-base flex justify-center items-center">
+                        <picture>
+                            <img class="lazyload" data-src="{{Vite::asset('resources/img/restaurante/res3.jpg')}}" src="" alt="">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide text-center text-base flex justify-center items-center">
+                        <picture>
+                            <img class="lazyload" data-src="{{Vite::asset('resources/img/restaurante/res4.jpg')}}" src="" alt="">
+                        </picture>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="container mx-auto px-5 mt-12 text-white">
         <div class="grid grid-flow-row mt-6">
             <h6 class="text-center mb-4">{{ __('home.titleNear') }}</h6>
