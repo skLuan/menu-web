@@ -27,9 +27,6 @@ const toogleDishes = (container) => {
     container.classList.toggle("hidden");
 };
 
-let closeMenuController = (imageElement, iconMenu) => {
-    imageElement.setAttribute("src", iconMenu);
-};
 
 let cleaning = (array) => {
     //---------------Metodo que remueve clases
@@ -131,8 +128,6 @@ let controllerCategory = () => {
             } else {
                 toogleDishes(categories[i].nextElementSibling);
             }
-
-            closeMenuController(iconCloseMenu, iconOpenMenu);
             anterior = uniqueCat;
         };
         swiperMenu.on("click", () => {
@@ -188,8 +183,6 @@ let controllerCategory = () => {
                     } else {
                         toogleDishes(categories[i].nextElementSibling);
                     }
-
-                    closeMenuController(iconCloseMenu, iconOpenMenu);
                     anterior = uniqueCat;
                 });
             });
@@ -199,4 +192,4 @@ let controllerCategory = () => {
     }
 };
 
-export { cleanAll, closeMenuController, controllerCategory };
+export { cleanAll, controllerCategory };

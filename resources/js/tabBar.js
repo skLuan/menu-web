@@ -1,4 +1,4 @@
-import { cleanAll, closeMenuController } from "./selectCat";
+import { cleanAll } from "./selectCat";
 import iconCloseMenu from "../img/icons/menu-close.svg";
 
 export default () => {
@@ -8,14 +8,9 @@ export default () => {
         // element.classList.toggle("flex");
     };
     let tabClick = document.getElementById("menuTab");
-    let closeMenu = document.getElementById("close-wrapper");
     let sidebar = document.getElementById("sideBar");
     let sidebarBg = document.querySelector("#sideBarBg");
 
-    closeMenu.addEventListener("click", () => {
-        cleanAll();
-        closeMenuController(closeMenu.firstElementChild, iconCloseMenu);
-    });
 
     sidebarBg.addEventListener("click", (e) => {
         toggleHidden(sidebar, "-translate-x-full");

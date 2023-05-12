@@ -14,7 +14,6 @@ class dList extends Component
      */
     public function __construct(public $title, public Collection $array)
     {
-        //
     }
 
     /**

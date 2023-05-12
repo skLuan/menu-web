@@ -6,9 +6,6 @@
 
         <x-language ></x-language>
 
-        <!-- <picture id="close-wrapper" class="my-auto ml-auto cursor-pointer">
-            <img id="icon-close-menu" src="{{Vite::asset('resources/img/icons/menu-close.svg')}}" alt="menu icon">
-        </picture>-->
     </div>
     <x-nav.side-bar></x-nav.side-bar>
 </div>

@@ -7,8 +7,9 @@ export default () => {
     const removerClaseEnElementos = (dish) => {
         modals.forEach((modal) => {
             modal.classList.replace("flex", "hidden");
-            dish.querySelector(".modalBlack").classList.toggle("hidden");
         });
+        dish.querySelector(".modalBlack").classList.toggle("hidden");
+        console.log(dish.querySelector(".modalBlack"));
     };
 
     cardDishes.forEach((dish) => {

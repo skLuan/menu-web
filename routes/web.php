@@ -27,15 +27,15 @@ Route::middleware('auth')->group(function () {
 
 Route::controller(Pagecontroller::class)->group(function () {
 
-    Route::get('reserve', 'reserve')->name('reserve');
-    Route::get('menu/{locale}', 'menu')->name('menu');
-    Route::get('menu', 'menu');
+    Route::get('reserve/{locale?}', 'reserve')->name('reserve');
+    Route::get('menu/{locale?}', 'menu')->name('menu');
+    Route::redirect('/menu', 'menu/{locale?}');
 
     Route::get('menuClean', 'menuClean')->name('menuClean');
     // Route::redirect('/','/en');
 
-    Route::get('/{locale}', 'home')->name('home');
-    Route::get('/', 'home');
+    Route::get('/{locale?}', 'home')->name('home');
+    Route::redirect('/', '/{locale?}');
     // ---------------------------- POST
     Route::post('/make-reserve', [PageController::class, 'makeReserve'])->name('make-reserve');
 
