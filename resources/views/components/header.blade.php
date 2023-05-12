@@ -4,6 +4,6 @@
             <img class="h-12" src="{{Vite::asset('resources/img/icons/logo.svg')}}" alt="">
         </picture>
     </a>
-<div class="mx-auto my-auto"><p class="text-gray text-sm font-light">Precios en <span class="font-bold">EUR</span></p></div>
+<div class="mx-auto my-auto"><p class="text-gray text-sm font-light">{{__('general.precios')}} <span class="font-bold">EUR</span></p></div>
 <a href="/reserve" class="text-red-navigation underline">{{ __('general.goReserve') }}</a>
 </header>

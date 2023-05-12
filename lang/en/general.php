@@ -3,4 +3,7 @@
 return [
     'gomenu' => 'View menu',
     'goReserve' => 'Reserve',
+    'reservas' => 'Reserves',
+    'menu' => 'Menu',
+    'precios' => 'Prices in',
 ];

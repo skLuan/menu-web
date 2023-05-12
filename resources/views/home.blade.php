@@ -189,7 +189,7 @@
 
     <div class="container mx-auto px-5">
         <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">Encuentrános</h6>
+            <h6 class="text-center mb-4">{{__('home.encuentranos')}}</h6>
         </div>
         <!-- Geolocalizacion -->
         <div class="w-full">
@@ -199,8 +199,8 @@
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="w-full grid justify-items-end mt-4">
-            <a class="color-primary font-semibold underline" href="https://goo.gl/maps/Lx5DS26yr8GtQ4DKA"
-                target="_blank">Ir a maps</a>
+            <a class="color-primary font-semibold text-center mx-auto underline" href="https://goo.gl/maps/Lx5DS26yr8GtQ4DKA"
+                target="_blank">{{__('home.goMaps')}}</a>
         </div>
     </div>
 
