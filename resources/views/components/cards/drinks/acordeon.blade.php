@@ -1,3 +1,7 @@
+@php
+    $firstE = $array->first();
+    $forId = strval('acordeon-type-'.$firstE->food_type_id);
+@endphp
 <label class="font-medium text-xl cursor-pointer hover:text-red-navigation" for="{{ $forId }}">
     {{ $title }}
     <iconify-icon class="my-auto text-base" icon="solar:alt-arrow-down-bold"></iconify-icon>
