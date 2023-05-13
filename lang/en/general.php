@@ -7,5 +7,6 @@ return [
     'menu' => 'Menu',
     'precios' => 'Prices in',
     'reserva' => 'Reserve',
+    'restaurante' => 'Restaurant',
 
 ];
