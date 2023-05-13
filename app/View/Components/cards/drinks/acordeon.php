@@ -13,11 +13,10 @@ class acordeon extends Component
      *
      * @return void
      */
-    public function __construct(public $forId = '', public $title = "", public Collection $array)
+    public function __construct(public $title = "", public Collection $array)
     {
         $firstE = $array->first();
-        $this->forId = strval('acordeon-type-'.$firstE->food_type_id);
-        $forId = strval('acordeon-type-'.$firstE->food_type_id);
+        $this->forId = $forId = strval('acordeon-type-'.$firstE->food_type_id);
     }
 
     /**
@@ -27,6 +26,6 @@ class acordeon extends Component
      */
     public function render()
     {
-        return view('components.cards.drinks.acordeon', ['forId' => $forId]);
+        return view('components.cards.drinks.acordeon', ['forId' => $this->forId]);
     }
 }
