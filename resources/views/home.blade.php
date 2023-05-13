@@ -1,17 +1,29 @@
+@php
+    $imgUrl = 'resources/img/principalSlider/'
+@endphp
 <x-layouts.general>
     <!-- Swiper Home -->
-    <div class="relative w-full h-[40vh]">
+    <div class="relative w-full h-[50vh]">
         <div class="swiper swiper-home w-full h-full">
             <div class="swiper-wrapper">
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 1</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 2</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 3</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 4</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 5</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 6</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 7</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 8</div>
-                <div class="swiper-slide text-center text-base flex justify-center items-center">Slide 9</div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">
+                    <picture class="h-full">
+                    <img class="object-cover object-center h-full" src="{{Vite::asset($imgUrl . '1.JPG')}}" alt=""></picture></div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">
+                    <picture class="h-full">
+                    <img class="object-cover object-center h-full" src="{{Vite::asset($imgUrl . '2.JPG')}}" alt=""></picture></div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">
+                    <picture class="h-full">
+                    <img class="object-cover object-center h-full" src="{{Vite::asset($imgUrl . '3.JPG')}}" alt=""></picture></div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">
+                    <picture class="h-full">
+                    <img class="object-cover object-center h-full" src="{{Vite::asset($imgUrl . '4.JPG')}}" alt=""></picture></div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">
+                    <picture class="h-full">
+                    <img class="object-cover object-center h-full" src="{{Vite::asset($imgUrl . '5.JPG')}}" alt=""></picture></div>
+                <div class="swiper-slide text-center text-base flex justify-center items-center">
+                    <picture class="h-full">
+                    <img class="object-cover object-center h-full" src="{{Vite::asset($imgUrl . '6.JPG')}}" alt=""></picture></div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -27,32 +39,46 @@
         <p class="text-center"><img class="inline h-[98px]" src="{{ Vite::asset('resources/img/icons/logo.svg') }}"
                 alt="Meson jesus"></p>
         <p class="text-center">EST. 1972</p>
-        <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">{{ __('home.titleTradition') }}</h6>
+        <h6 class="text-center mb-4">{{ __('home.titleTradition') }}</h6>
+
+    </div>
+
+    <div class="grid grid-cols-2 gap-2 mt-6 px-5">
+        <div class="pr-2">
             <p>
                 {{ __('home.tradition') }}
             </p>
         </div>
-    </div>
-
-    <p class="text-right py-10">
-        <picture>
-            <img class="inline  w-1/2" src="{{ Vite::asset('resources/img/tradition.jpg') }}" alt="detalle tradición">
-        </picture>
-    </p>
-
-    <div class="container mx-auto px-5 mt-12 text-white">
-        <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">{{ __('home.titleKitchen') }}</h6>
-            <p>
-                {{ __('home.kitchen') }}
+        <div>
+            <p class="text-right">
+                <picture>
+                    <img class="inline  w-7/8" src="{{ Vite::asset('resources/img/tradition.jpg') }}" alt="detalle tradición">
+                </picture>
             </p>
         </div>
     </div>
 
-    <p class="text-left py-10">
-        <img class="inline" src="{{ Vite::asset('resources/img/minipaella2.jpg') }}" alt="detalle tradición">
-    </p>
+
+
+    <div class="container mx-auto px-5 mt-12 text-white">
+        <div class="grid grid-flow-row mt-6">
+            <h6 class="text-center mb-4">{{ __('home.titleKitchen') }}</h6>
+            <p class="text-left pt-2">
+                <img class="inline" src="{{ Vite::asset('resources/img/minipaella2.jpg') }}" alt="detalle tradición">
+            </p>
+            <p>
+                {{ __('home.kitchen') }}
+            </p>
+            <div class="w-full flex flex-col items-center mt-4">
+                <div class="mb-5">
+                    <a href="/reserve" class="block bg-red-navigation text-white font-medium px-3 py-1"
+                        type="button">{{ __('general.goReserve') }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <div class="container mx-auto mt-12 ">
         <div class="grid grid-flow-row mt-6">
@@ -88,21 +114,62 @@
         </div>
     </div>
 
+    <div class="container mx-auto mt-12 ">
+        <div class="grid grid-flow-row mt-6">
+            <h6 class="text-center mb-4">{{ __('home.titleReviews') }}</h6>
+        </div>
+        <!-- Swiper -->
+        <div class="relative w-full">
+            <div class="swiper swiper-clientes w-full h-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide text-center text-base flex justify-center items-center">
+                        <picture>
+                            <img class="lazyload" data-src="{{Vite::asset('resources/img/restaurante/res1.jpg')}}" alt="">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide text-center text-base flex justify-center items-center">
+                        <picture>
+                            <img class="lazyload" data-src="{{Vite::asset('resources/img/restaurante/res2.jpg')}}" src="" alt="">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide text-center text-base flex justify-center items-center">
+                        <picture>
+                            <img class="lazyload" data-src="{{Vite::asset('resources/img/restaurante/res3.jpg')}}" src="" alt="">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide text-center text-base flex justify-center items-center">
+                        <picture>
+                            <img class="lazyload" data-src="{{Vite::asset('resources/img/restaurante/res4.jpg')}}" src="" alt="">
+                        </picture>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="container mx-auto px-5 mt-12 text-white">
         <div class="grid grid-flow-row mt-6">
             <h6 class="text-center mb-4">{{ __('home.titleNear') }}</h6>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-2 mt-6 px-5">
+        <div class="pr-2">
             <p>
                 {{ __('home.near') }}
 
             </p>
         </div>
+        <div>
+            <p class="text-right">
+                <picture>
+                    <img class="inline w-7/8" src="{{ Vite::asset('resources/img/near.jpg') }}" alt="detalle tradición">
+                </picture>
+            </p>
+        </div>
     </div>
 
-    <p class="text-right py-2">
-        <picture>
-            <img class="inline w-1/2" src="{{ Vite::asset('resources/img/near.jpg') }}" alt="detalle tradición">
-        </picture>
-    </p>
 
     <div class="container mx-auto px-5 mt-12 text-white">
         <div class="grid grid-flow-row">
@@ -122,7 +189,7 @@
 
     <div class="container mx-auto px-5">
         <div class="grid grid-flow-row mt-6">
-            <h6 class="text-center mb-4">Encuentrános</h6>
+            <h6 class="text-center mb-4">{{__('home.encuentranos')}}</h6>
         </div>
         <!-- Geolocalizacion -->
         <div class="w-full">
@@ -132,8 +199,8 @@
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="w-full grid justify-items-end mt-4">
-            <a class="color-primary font-semibold underline" href="https://goo.gl/maps/Lx5DS26yr8GtQ4DKA"
-                target="_blank">Ir a maps</a>
+            <a class="color-primary font-semibold text-center mx-auto underline" href="https://goo.gl/maps/Lx5DS26yr8GtQ4DKA"
+                target="_blank">{{__('home.goMaps')}}</a>
         </div>
     </div>
 
@@ -155,7 +222,7 @@
 
     <div class="w-full flex flex-col items-center mt-9">
         <div class="mb-5">
-            <a href="/reservas" class="block bg-red-navigation text-white font-medium px-3 py-1"
+            <a href="/reserve" class="block bg-red-navigation text-white font-medium px-3 py-1"
                 type="button">{{ __('general.goReserve') }}</a>
         </div>
         <div class="mb-5">

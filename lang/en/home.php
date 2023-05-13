@@ -6,6 +6,7 @@ return [
     'titleNear' => 'Near to the Mesón',
     'titlePi' => 'Pi church',
     'titleTheRestaurant' => 'The restaurant',
+    'titleReviews' => 'Reviews',
     'titleOpening' => 'Opening Hours',
     'titleFollow' => 'Follow us',
     'week' => 'Mon - Fri',
@@ -23,5 +24,8 @@ street before or after your meal to soak up the local culture and ambiance.",
     'piChurch' => 'Our restaurant is situated in the charming Gothic Quarter of Barcelona, just a
 short walk from the stunning Iglesia del Pi. After enjoying a delicious meal with
 us, take a stroll and visit this beautiful church, which dates back to the 14th
-century.'
+century.',
+    'encuentranos' => 'Find Us',
+    'goMaps' => 'go to Google Maps',
+
 ];
