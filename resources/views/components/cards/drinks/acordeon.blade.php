@@ -1,7 +1,6 @@
-
-<label class="font-medium text-xl cursor-pointer hover:text-red-navigation"
-    for="{{ $forId }}">
+<label class="font-medium text-xl cursor-pointer hover:text-red-navigation" for="{{ $forId }}">
     {{ $title }}
+    <iconify-icon class="my-auto text-base" icon="solar:alt-arrow-down-bold"></iconify-icon>
 </label>
 <input class="hidden" type="checkbox" id="{{ $forId }}">
 <ul class="wineContainer">

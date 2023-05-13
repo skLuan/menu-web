@@ -1,16 +1,16 @@
 @php
     $urls = [
-        'wine' => '/image/drinks/wine.png',
-        'sangria' => '/image/drinks/wine.png',
-        'cava' => '/image/drinks/cava.png',
-        'coctel' => '/image/drinks/coctel.png',
-        'other' => '/image/drinks/others.png',
+        'Wine' => '/image/drinks/wine.png',
+        'Sangria' => '/image/drinks/sangria.png',
+        'Cava' => '/image/drinks/cava.png',
+        'Coctel' => '/image/drinks/coctel.png',
+        'Drinks' => '/image/drinks/others.png',
     ];
 @endphp
 <div class="flex flex-row px-5 mt-5 justify-around">
     <h2 class="text-2xl m-auto">{{ $title }}</h2>
     <picture class="w-1/2">
-        <img class="w-full rounded-md my-auto lazyload" data-src="{{ $urls['sangria'] }}" src="low-quality.jpg"
+        <img class="w-full rounded-md my-auto lazyload" data-src="{{ $urls[$title] }}" src="low-quality.jpg"
             alt="">
     </picture>
 </div>
