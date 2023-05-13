@@ -8,10 +8,10 @@
             <img class="inline w-[50px]" src="{{ Vite::asset('resources/img/icons/logo.svg') }}" alt="Meson jesus">
             @if ($success)
                 <div class="col-span-4 flex justify-center items-center">
-                    <h1 class="text-2xl text-white-true">¡Solicitud enviada!</h1>
+                    <h1 class="text-2xl text-white-true">{{ __('reserva.solicitud') }}</h1>
                 @else
                     <div class="col-span-3 flex justify-center items-center">
-                        <h1 class="text-2xl">Reserva</h1>
+                        <h1 class="text-2xl">{{ __('general.reserva') }}</h1>
             @endif
         </div>
     </div>
@@ -28,36 +28,32 @@
         @if ($success)
             <div class="alert alert-success">
                 <p>
-                    Te hemos enviado un correo electrónico con toda la información de tu
-                    reserva.
+                    {{ 'reserva.envio1' }}
                     <br>
                     <br>
-                    Por favor, revisa tu bandeja de entrada y también la carpeta de spam por si acaso,
-                    para confirmar que has recibido nuestro mensaje.
+                    {{ __('reserva.envio2') }}
                     <br>
                     <br>
-                    Te mantendremos informado sobre el estado de tu
-                    reserva.
+                    {{ __('reserva.envio3') }}
+
                 </p>
                 <div class="my-14 text-center">
-                    <h6 class="">¡Muchas gracias por elegir nuestro restaurante!</h6>
+                    <h6 class="">{{ 'reserva.envio4' }}</h6>
                     <p class=" text-white-true text-bold mt-5">
-                        <a href="{{route('menu', ['locale' => 'en'])}}" class="bg-red-navigation px-6 py-3">Ver el menu</a>
+                        <a href="{{ route('menu', ['locale' => 'en']) }}" class="bg-red-navigation px-6 py-3">Ver el
+                            menu</a>
                     </p>
                 </div>
                 <p>
-                    Si tienes alguna pregunta o necesitas hacer cambios en tu reserva, no dudes en contactarnos.
+                    {{ __('reserva.envio4') }}
                 </p>
             </div>
         @else
-            <p class="col-span-full mx-auto mb-5">Danos tu información de reserva y en breve te estaremos
-                confirmando
-                la
-                reservación</p>
+            <p class="col-span-full mx-auto mb-5"> {{ __('reserva.texto1') }}</p>
             <form class="px-4" action="{{ route('make-reserve') }}" method="POST">
                 @csrf
                 <label for="name" class="block">
-                    <span class="block font-medium text-sm">Nombre</span>
+                    <span class="block font-medium text-sm">{{ __('reserva.nombre') }}</span>
                     <input id="name" name="name" type="text"
                         class="peer mt-1 block w-full px-3 py-2 bg-black border border-slate-300 rounded-md placeholder-slate-400
                         focus:outline-none text-white focus:border-red-500 focus:ring-1 focus:ring-red-500
@@ -66,7 +62,7 @@
                         focus:invalid:border-red-500 focus:invalid:ring-red-500" />
 
                     <p class="mt-2 invisible peer-invalid:visible text-red-600 text-sm">
-                        Ingrese su nombre completo.
+                        {{ __('reserva.errorNombre') }}
                     </p>
                 </label>
                 <label class="block">
@@ -79,11 +75,12 @@
                       focus:invalid:border-red-500 focus:invalid:ring-red-500" />
 
                     <p class="mt-2 invisible peer-invalid:visible text-red-600 text-sm">
-                        Ingrese una dirección de correo válida.
+                        {{ __('reserva.errormail') }}
+
                     </p>
                 </label>
                 <label class="block">
-                    <span class="block font-medium text-sm">N° de personas</span>
+                    <span class="block font-medium text-sm">{{ __('reserva.nPersonas') }}</span>
                     <input type="number" name="numero_personas"
                         class="peer mt-1 block w-full px-3 py-2 bg-black border border-slate-300 rounded-md placeholder-slate-400
                         focus:outline-none text-white focus:border-red-500 focus:ring-1 focus:ring-red-500
@@ -92,11 +89,11 @@
                         focus:invalid:border-red-500 focus:invalid:ring-red-500" />
 
                     <p class="mt-2 invisible peer-invalid:visible text-red-600 text-sm">
-                        Ingrese el numero de personas que asistirán.
+                        {{ __('reserva.errorPersonas') }}
                     </p>
                 </label>
                 <label class="block">
-                    <span class="block font-medium text-sm">Fecha</span>
+                    <span class="block font-medium text-sm">{{ __('reserva.fecha') }}</span>
                     <input type="date" name="fecha"
                         class="peer mt-1 block w-full px-3 py-2 bg-black border border-slate-300 rounded-md placeholder-slate-400
                         focus:outline-none text-white focus:border-red-500 focus:ring-1 focus:ring-red-500
@@ -105,11 +102,13 @@
                         focus:invalid:border-red-500 focus:invalid:ring-red-500" />
 
                     <p class="mt-2 invisible peer-invalid:visible text-red-600 text-sm">
-                        Ingrese un formato de fecha correcto.
+                        {{ __('reserva.errorFecha') }}
+
                     </p>
                 </label>
                 <label class="block">
-                    <span class="block font-medium text-sm">Hora</span>
+                    <span class="block font-medium text-sm">{{ __('reserva.hora') }}
+</span>
                     <input type="time" name="hora"
                         class="peer mt-1 block w-full px-3 py-2 bg-black border border-slate-300 rounded-md placeholder-slate-400
                         focus:outline-none text-white focus:border-red-500 focus:ring-1 focus:ring-red-500
@@ -118,11 +117,11 @@
                         focus:invalid:border-red-500 focus:invalid:ring-red-500" />
 
                     <p class="mt-2 invisible peer-invalid:visible text-red-600 text-sm">
-                        Ingrese un formato de hora correcto.
+                        {{ __('reserva.errorHora') }}
                     </p>
                 </label>
                 <div class="flex justify-center items-center">
-                    <button class="btn px-5 py-2 btn-outline-primary" type="submit">Reservar</button>
+                    <button class="btn px-5 py-2 btn-outline-primary" type="submit">{{ __('general.goReserve') }}</button>
                 </div>
             </form>
         @endif
